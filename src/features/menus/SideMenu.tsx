@@ -1,17 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MapIcon, ChartPieIcon, PresentationChartLineIcon, CurrencyDollarIcon, ClipboardListIcon, UserIcon } from '@heroicons/react/solid'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import {RootState} from '../../app/store'
 import { toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 } from './dropDownSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook, faBuilding, faCubesStacked, faFolder, faHdd, faIndustry, faInfo, faInfoCircle, faLineChart, faLink, faMap, faMapMarker, faMapPin, faMoneyBill, faRoad, faTh, faUser, faUsers, faWrench } from '@fortawesome/free-solid-svg-icons'
 
-type IconProps = {
-  name:React.FC
-}
-
-const Icon = (props:IconProps) => {
-  return React.createElement(props.name)
-}
 
 function classNames(...classes:string[]) {
   return classes.filter(Boolean).join(' ')
@@ -27,17 +21,16 @@ function SideMenu() {
   const dropDown7 = useAppSelector((state:RootState) => state.dropDown.open7);
   const dispatch = useAppDispatch();
   return (
-    <div className="flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-gray-900">
+    <div className="flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-sky-700">
       <div>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={MapIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faMap} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
             >
               Dashboard
@@ -48,40 +41,51 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={ChartPieIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'>
+            <FontAwesomeIcon icon={faLink} color="white" className='basis-[15%]' size='lg'/>
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle1())}
             >
               Road Network
             </Link>
           </div>
-
-          <div className={(!dropDown1? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Roads</a>
-            <a href="/" className='text-white mt-3'>Regions</a>
-            <a href="/" className='text-white mt-3'>Locations</a>
-            <a href="/" className='text-white mt-3'>Road Types</a>
-          </div>
+            
+            <div className={(!dropDown1? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+              <ul className='fa-ul text-base space-y-3'>
+                <li>
+                  <FontAwesomeIcon icon={faRoad} color="white" listItem/>
+                  <a href="/" className='text-white mt-3'>Roads</a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faMapMarker} color="white" listItem/>
+                  <a href="/" className='text-white mt-3'>Regions</a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faMapPin} color="white" listItem/>
+                  <a href="/" className='text-white mt-3'>Locations</a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faTh} color="white" listItem/>
+                  <a href="/" className='text-white mt-3'>Road Types</a>
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={ChartPieIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faCubesStacked} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle2())}
             >
@@ -89,23 +93,30 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown2? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Inventory Data</a>
-            <a href="/" className='text-white mt-3'>Road and Section Deta</a>
+          <div className={(!dropDown2? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faIndustry} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Inventory Data</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faHdd} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Road and Section Data</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={PresentationChartLineIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faInfoCircle} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle7())}
             >
@@ -113,24 +124,34 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown7? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Functional Assesment</a>
-            <a href="/" className='text-white mt-3'>Material Information</a>
-            <a href="/" className='text-white mt-3'>Surface Distress</a>
+          <div className={(!dropDown7? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faBuilding} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Functional Assesment</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faInfoCircle} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Material Information</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faInfo} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Surface Distress</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={PresentationChartLineIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faLineChart} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle3())}
             >
@@ -138,24 +159,30 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown3? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Link 1</a>
-            <a href="/" className='text-white mt-3'>Link 2</a>
-            <a href="/" className='text-white mt-3'>Link 3</a>
+          <div className={(!dropDown3? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faMapPin} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Inventory Data</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faMapPin} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Road and Section Deta</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] text-white'>
-              <Icon name={CurrencyDollarIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faMoneyBill} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] mt-1 text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle4())}
             >
@@ -163,22 +190,26 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown4? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Projects/Programs</a>
+          <div className={(!dropDown4? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faFolder} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Projects/Programs</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] mt-1 text-white'>
-              <Icon name={ClipboardListIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faWrench} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle5())}
             >
@@ -186,23 +217,30 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown5? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Contracts</a>
-            <a href="/" className='text-white mt-3'>Contractors</a>
+          <div className={(!dropDown5? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faBook} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Contracts</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faUsers} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Contractors</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='px-6 py-4 flex hover:bg-sky-900'> 
-            <div className='basis-[22%] mt-1 text-white'>
-              <Icon name={UserIcon}/>
-            </div>
+          <div className='py-4 flex hover:bg-sky-900'> 
+            <FontAwesomeIcon icon={faUser} color="white" className='basis-[15%]' size='lg'/>
+
             <Link
               to=''
               className={classNames(
-                "basis-[78%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
               )}
               onClick={() => dispatch(toggle6())}
             >
@@ -210,9 +248,17 @@ function SideMenu() {
             </Link>
           </div>
 
-          <div className={(!dropDown6? 'hidden': 'block') + ' flex flex-col mx-8'}>
-            <a href="/" className='text-white mt-3'>Users</a>
-            <a href="/" className='text-white mt-3'>Roles</a>
+          <div className={(!dropDown6? 'hidden': 'block') + ' bg-slate-800 py-2'}>
+            <ul className=' fa-ul text-base space-y-3'>
+              <li>
+                <FontAwesomeIcon icon={faUsers} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Users</a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faUser} color="white" listItem/>
+                <a href="/" className='text-white mt-3'>Roles</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
