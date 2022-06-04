@@ -21,16 +21,16 @@ function SideMenu() {
   const dropDown7 = useAppSelector((state:RootState) => state.dropDown.open7);
   const dispatch = useAppDispatch();
   return (
-    <div className="flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-sky-700">
+    <div className="flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-gradient-to-r from-indigo-700 to-blue-700">
       <div>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faMap} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
             >
               Dashboard
@@ -41,12 +41,12 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'>
+          <div className='py-4 flex'>
             <FontAwesomeIcon icon={faLink} color="white" className='basis-[15%]' size='lg'/>
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle1())}
             >
@@ -79,13 +79,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faCubesStacked} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle2())}
             >
@@ -110,13 +110,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faInfoCircle} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle7())}
             >
@@ -145,13 +145,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faLineChart} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle3())}
             >
@@ -176,13 +176,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faMoneyBill} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle4())}
             >
@@ -203,13 +203,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faWrench} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle5())}
             >
@@ -234,13 +234,13 @@ function SideMenu() {
 
       <div className='-mt-[38px]'>
         <div className="mb-10">
-          <div className='py-4 flex hover:bg-sky-900'> 
+          <div className='py-4 flex'> 
             <FontAwesomeIcon icon={faUser} color="white" className='basis-[15%]' size='lg'/>
 
             <Link
               to=''
               className={classNames(
-                "basis-[85%] ml-[10px] text-base text-white hover:text-white"
+                "basis-[85%] ml-[10px] text-base text-white hover:text-slate-300"
               )}
               onClick={() => dispatch(toggle6())}
             >
