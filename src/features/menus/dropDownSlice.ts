@@ -7,7 +7,8 @@ export interface DropDownMenuState{
     open4: boolean,
     open5: boolean,
     open6: boolean,
-    open7: boolean
+    open7: boolean,
+    closeMenu: boolean
 }
 
 const initialState: DropDownMenuState = {
@@ -17,7 +18,8 @@ const initialState: DropDownMenuState = {
     open4: false,
     open5: false,
     open6: false,
-    open7: false
+    open7: false,
+    closeMenu: false
 }
 
 export const dropDownSlice = createSlice({
@@ -45,10 +47,13 @@ export const dropDownSlice = createSlice({
         },
         toggle7: (state: DropDownMenuState) => {
             state.open7? state.open7 = false : state.open7 = true;
+        },
+        toggleMenu: (state:DropDownMenuState) => {
+            state.closeMenu? state.closeMenu = false : state.closeMenu = true;
         }
     } 
 });
 
-export const {toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7} = dropDownSlice.actions;
+export const {toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7, toggleMenu} = dropDownSlice.actions;
 
 export default dropDownSlice.reducer;

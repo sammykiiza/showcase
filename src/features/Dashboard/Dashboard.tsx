@@ -7,6 +7,7 @@ function Dashboard() {
     <>
     <NavBar title="Dashboard"/>
     <MainLayout>
+        
         <span>Dashboard</span>
     </MainLayout>
     </>
