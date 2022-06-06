@@ -29,7 +29,7 @@ function NavBar(props:Props) {
 
   const menuState = useAppSelector((state:RootState) => state.dropDown.closeMenu);
   return (
-    <Disclosure as="nav" className={(menuState? "md:ml-1 ml-1" : "") +" md:ml-[15%] ml-[30%] bg-white border-b-2"}>
+    <Disclosure as="nav" className={(menuState? "md:ml-[0.5%] ml-[0.5%]" : "") +" md:ml-[15%] ml-[30%] bg-white border-b-2"}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

@@ -271,7 +271,8 @@ function SideMenu() {
     </div>
 
     <button
-        className={(menuState? 'transform transition ease-in-out duration-300 -translate-x-[800%]' : 'transform transition ease-in-out duration-300 translate-x-0') + ' absolute top-3 left-[13%]'}
+        className={
+          (menuState? 'transform transition ease-in-out duration-300 -translate-x-[600%]' : 'transform transition ease-in-out duration-300 translate-x-0') + ' absolute top-2 left-[12%]'}
         onClick={() => dispatch(toggleMenu())}
       >
         <FontAwesomeIcon icon={faBars} className={(menuState? 'text-indigo-700 hover:text-black' : '') + ' text-white text-2xl hover:text-slate-300'} />
