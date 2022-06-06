@@ -49,7 +49,6 @@ export const dropDownSlice = createSlice({
             state.open7? state.open7 = false : state.open7 = true;
         },
         toggleMenu: (state:DropDownMenuState) => {
-            console.log(window.screen.width);
             state.closeMenu? state.closeMenu = false : state.closeMenu = true;
         }
     } 
