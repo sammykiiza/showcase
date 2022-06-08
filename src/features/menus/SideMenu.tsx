@@ -2,9 +2,37 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import {RootState} from '../../app/store'
-import { toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7, toggleMenu } from './dropDownSlice'
+import { 
+  toggle1, 
+  toggle2, 
+  toggle3, 
+  toggle4, 
+  toggle5, 
+  toggle6, 
+  toggle7, 
+  toggleMenu } from './dropDownSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faBook, faBuilding, faCubesStacked, faFolder, faHdd, faIndustry, faInfo, faInfoCircle, faLineChart, faLink, faMap, faMapMarker, faMapPin, faMoneyBill, faRoad, faTh, faUser, faUsers, faWrench } from '@fortawesome/free-solid-svg-icons'
+import { 
+  faBars, 
+  faBook, 
+  faBuilding, 
+  faCubesStacked, 
+  faFolder, 
+  faHdd, 
+  faIndustry, 
+  faInfo, 
+  faInfoCircle, 
+  faLineChart, 
+  faLink, 
+  faMap, 
+  faMapMarker, 
+  faMapPin, 
+  faMoneyBill, 
+  faRoad, 
+  faTh, 
+  faUser, 
+  faUsers, 
+  faWrench } from '@fortawesome/free-solid-svg-icons'
 
 
 function classNames(...classes:string[]) {
