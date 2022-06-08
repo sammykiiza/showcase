@@ -6,8 +6,9 @@ export const listenerMiddleware = createListenerMiddleware();
     listenerMiddleware.startListening(
         {
             actionCreator: setFiscalYear,
-            effect:async (action:PayloadAction<string>) => {
+            effect:async (action:PayloadAction<string>, listenerApi) => {
                 localStorage.setItem('fiscalYear', action.payload);
+                listenerApi.cancelActiveListeners();
             }
         }
     );
@@ -15,8 +16,9 @@ export const listenerMiddleware = createListenerMiddleware();
     listenerMiddleware.startListening(
         {
             actionCreator: setRegion,
-            effect:async (action:PayloadAction<string>) => {
+            effect:async (action:PayloadAction<string>, listenerApi) => {
                 localStorage.setItem('region', action.payload);
+                listenerApi.cancelActiveListeners();
             }
         }
     );
@@ -24,8 +26,9 @@ export const listenerMiddleware = createListenerMiddleware();
     listenerMiddleware.startListening(
         {
             actionCreator: setCouncil,
-            effect:async (action:PayloadAction<string>) => {
+            effect:async (action:PayloadAction<string>, listenerApi) => {
                 localStorage.setItem('council', action.payload);
+                listenerApi.cancelActiveListeners();
             }
         }
     );
