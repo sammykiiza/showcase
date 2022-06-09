@@ -299,6 +299,7 @@ function SideMenu() {
       </div>
     </div>
 
+    {/* menu hiding button hidden for now as is not really needed since system is only desktop */}
     <button
         className={
           (menuState? 'transform transition ease-in-out duration-300 -translate-x-[600%]' : 
