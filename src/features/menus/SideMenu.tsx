@@ -53,7 +53,8 @@ function SideMenu() {
     <>
     <div 
       className={
-        (menuState? "transform transition ease-in-out duration-300 -translate-x-full" : "transform transition ease-in-out duration-300 translate-x-0") + " flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-gradient-to-r from-indigo-700 to-blue-700"
+        (menuState? "transform transition ease-in-out duration-300 -translate-x-full" : "transform transition ease-in-out duration-300 translate-x-0") + 
+        " flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-gradient-to-r from-indigo-700 to-blue-700"
       }
     >
       <div className='ml-0.5'>
@@ -300,7 +301,9 @@ function SideMenu() {
 
     <button
         className={
-          (menuState? 'transform transition ease-in-out duration-300 -translate-x-[600%]' : 'transform transition ease-in-out duration-300 translate-x-0') + ' absolute top-2 left-[12%]'}
+          (menuState? 'transform transition ease-in-out duration-300 -translate-x-[600%]' : 
+          'transform transition ease-in-out duration-300 translate-x-0') + 
+          ' absolute top-2 left-[12%] hidden'}
         onClick={() => dispatch(toggleMenu())}
       >
         <FontAwesomeIcon icon={faBars} className={(menuState? 'text-indigo-700 hover:text-black' : '') + ' text-white text-2xl hover:text-slate-300'} />
