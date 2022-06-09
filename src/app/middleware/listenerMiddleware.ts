@@ -32,3 +32,12 @@ export const listenerMiddleware = createListenerMiddleware();
             }
         }
     );
+
+    listenerMiddleware.startListening(
+        {
+            actionCreator: setCouncil,
+            effect:async () => {
+                window.location.reload();
+            }
+        }
+    );

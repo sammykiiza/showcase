@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { checkFilterLocalStorage } from '../../../app/middleware/checkFilterLocalStorage';
 import { RootState } from '../../../app/store'
 import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
 
 function FilterMenu() {
     const menuState = useAppSelector(((state:RootState) => state.dropDown.closeMenu));
     const dispatch = useAppDispatch();
+    const fiscalYear = localStorage.getItem('fiscalYear');
+    const region = localStorage.getItem('region');
+    const council = localStorage.getItem('council')
+
+    useEffect(() => {
+        checkFilterLocalStorage()
+    }, 
+        [
+        fiscalYear,
+        region,
+        council
+    ]
+    );
+
+
   return (
     <div className={(menuState? 
         'transform transition ease-in-out duration-300 -translate-x-[20%]' : 
-        'transform transition ease-in-out duration-300 translate-x-0') + ' flex'}>
+        'transform transition ease-in-out duration-300 translate-x-0') + ' flex' + 
+        (checkFilterLocalStorage()? ' hidden' : ' block')
+        }>
         <select
         className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
         name="Fiscal Year"
