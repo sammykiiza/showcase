@@ -53,7 +53,8 @@ function SideMenu() {
     <>
     <div 
       className={
-        (menuState? "transform transition ease-in-out duration-300 -translate-x-full" : "transform transition ease-in-out duration-300 translate-x-0") + 
+        (menuState? "transform transition ease-in-out duration-300 -translate-x-full" : 
+        "transform transition ease-in-out duration-300 translate-x-0") + 
         " flex flex-col absolute top-0 left-0 min-h-screen w-[30%] md:w-[15%] bg-gradient-to-r from-indigo-700 to-blue-700"
       }
     >
