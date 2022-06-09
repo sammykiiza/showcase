@@ -21,43 +21,58 @@ function FilterMenu() {
     ]
     );
 
+    const changeLocation = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
+
 
   return (
-    <div className={(menuState? 
-        'transform transition ease-in-out duration-300 -translate-x-[20%]' : 
-        'transform transition ease-in-out duration-300 translate-x-0') + ' flex' + 
-        (checkFilterLocalStorage()? ' hidden' : ' block')
-        }>
-        <select
-        className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
-        name="Fiscal Year"
-        id="fiscal-year"
-        onChange={(e) => dispatch(setFiscalYear(e.currentTarget.value))}
+    <>
+        <button
+        className={(checkFilterLocalStorage()? 'block' : 'hidden') + 
+        ' relative border-2 border-indigo-700 rounded-full text-indigo-700 p-2 mt-1 hover:text-black'}
+        onClick={changeLocation}
         >
-            <option>Fiscal Year*</option>
-            <option value="2022">2022</option>
-        </select>
+            Change Location
+        </button>
 
-        <select
-        className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
-        name="Region"
-        id="region"
-        onChange={(e) => dispatch(setRegion(e.currentTarget.value))}
-        >
-            <option>Region*</option>
-            <option value="lusaka">Lusaka</option>
-        </select>
+        <div className={(menuState? 
+            'transform transition ease-in-out duration-300 -translate-x-[20%]' : 
+            'transform transition ease-in-out duration-300 translate-x-0') + ' flex' + 
+            (checkFilterLocalStorage()? ' hidden' : ' block')
+            }>
+            <select
+            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
+            name="Fiscal Year"
+            id="fiscal-year"
+            onChange={(e) => dispatch(setFiscalYear(e.currentTarget.value))}
+            >
+                <option>Fiscal Year*</option>
+                <option value="2022">2022</option>
+            </select>
 
-        <select
-        className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
-        name="Council"
-        id="council"
-        onChange={(e) => dispatch(setCouncil(e.currentTarget.value))}
-        >
-            <option>Council*</option>
-            <option value="Chongwe">Chongwe</option>
-        </select>
-    </div>
+            <select
+            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
+            name="Region"
+            id="region"
+            onChange={(e) => dispatch(setRegion(e.currentTarget.value))}
+            >
+                <option>Region*</option>
+                <option value="lusaka">Lusaka</option>
+            </select>
+
+            <select
+            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
+            name="Council"
+            id="council"
+            onChange={(e) => dispatch(setCouncil(e.currentTarget.value))}
+            >
+                <option>Council*</option>
+                <option value="Chongwe">Chongwe</option>
+            </select>
+        </div>
+    </>
   )
 }
 
