@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { checkFilterLocalStorage } from '../../../app/middleware/checkFilterLocalStorage';
+import { checkFilterLocalStorage } from '../../../helpers/functions/checkFilterLocalStorage';
 import { RootState } from '../../../app/store'
 import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
 

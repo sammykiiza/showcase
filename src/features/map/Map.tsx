@@ -1,73 +1,34 @@
 import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
-import FilterMenu from '../menus/fiterMenu/FilterMenu'
 import NavBar from '../menus/NavBar'
-import Table from '../tables/DataTableBase'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import './styles.css'
+
 
 function Map() {
-  const columns = [
-    {
-        name: 'Date Uploaded',
-        selector: (row:{title:string}) => row.title,
-        sortable: true,
-    },
-    {
-        name: 'Road Number',
-        selector: (row:{year: string}) => row.year,
-        sortable: true
-    },
-    {
-      name: 'Road Name',
-      selector: (row:{year: string}) => row.year,
-      sortable: true
-  },
-  {
-    name: 'Road Type',
-    selector: (row:{year: string}) => row.year,
-    sortable: true
-  },
-  {
-    name: 'Segment Number',
-    selector: (row:{year: string}) => row.year,
-    sortable: true
-  },
-  {
-    name: 'Start(KM)',
-    selector: (row:{year: string}) => row.year,
-    sortable: true
-  },
-  {
-    name: 'End(KM)',
-    selector: (row:{year: string}) => row.year,
-    sortable: true
-  },
-  {
-    name: 'Road Condition Index',
-    selector: (row:{year: string}) => row.year,
-    sortable: true
-  },
-];
-
-const data = [
-    {
-        id: 1,
-        title: 'Beetlejuice',
-        year: '1988',
-    },
-    {
-        id: 2,
-        title: 'Ghostbusters',
-        year: '1984',
-    },
-]
-
   return (
     <>
     <NavBar title='Map'/>
-    <MainLayout>
-      <FilterMenu />
-      <Table columns = {columns} data = {data}/>
-    </MainLayout>
+      <MainLayout>
+        <div className='leaflet-container mt-6 -ml-[3%]'>
+          <MapContainer
+            center={[13.1339, 27.8493]}  
+            zoom={13}
+            scrollWheelZoom={true}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[13.1339, 27.8493]}>
+              <Popup>
+                Zambia.
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+
+      </MainLayout>
     </>
   )
 }
