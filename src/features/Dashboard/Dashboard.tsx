@@ -6,48 +6,48 @@ import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
 
-  const columns = [
-    {
-        name: 'Date Uploaded',
-        sortable: true,
-    },
-    {
-        name: 'Road Number',
-        sortable: true
-    },
-    {
-      name: 'Road Name',
+const columns = [
+  {
+      name: 'Date Uploaded',
+      sortable: true,
+  },
+  {
+      name: 'Road Number',
       sortable: true
   },
   {
-    name: 'Road Type',
+    name: 'Road Name',
     sortable: true
-  },
-  {
-    name: 'Segment Number',
-    sortable: true
-  },
-  {
-    name: 'Start(KM)',
-    sortable: true
-  },
-  {
-    name: 'End(KM)',
-    sortable: true
-  },
-  {
-    name: 'Road Condition Index',
-    sortable: true
-  },
+},
+{
+  name: 'Road Type',
+  sortable: true
+},
+{
+  name: 'Segment Number',
+  sortable: true
+},
+{
+  name: 'Start(KM)',
+  sortable: true
+},
+{
+  name: 'End(KM)',
+  sortable: true
+},
+{
+  name: 'Road Condition Index',
+  sortable: true
+},
 ];
 
 const data = [
-    {
-        title: 'Beetlejuice',
-    },
-    {
-        title: 'Ghostbusters',
-    },
+  {
+      title: 'Beetlejuice',
+  },
+  {
+      title: 'Ghostbusters',
+  },
 ]
 
   return (

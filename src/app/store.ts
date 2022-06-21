@@ -2,16 +2,18 @@ import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@redu
 import counterReducer from '../features/counter/counterSlice';
 import dropDownReducer from '../features/menus/dropDownSlice';
 import filterMenuReducer from '../features/menus/fiterMenu/filterMenuSlice';
+import { api } from '../services/api';
 import { listenerMiddleware } from './middleware/listenerMiddleware';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     dropDown: dropDownReducer,
-    filterMenu: filterMenuReducer
+    filterMenu: filterMenuReducer,
+    [api.reducerPath]: api.reducer
   },
   middleware: (getDefaultMiddleware) => 
-    getDefaultMiddleware().prepend(listenerMiddleware.middleware),
+    getDefaultMiddleware().prepend(listenerMiddleware.middleware, api.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

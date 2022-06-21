@@ -12,7 +12,7 @@ function Map() {
     <NavBar title='Map'/>
       <MainLayout>
         <FilterMenu />
-        <div className='leaflet-container mt-6 -ml-[3%]'>
+        <div className='leaflet-container mt-2 -ml-[2%]'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
             zoom={13}
