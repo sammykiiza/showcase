@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contracts from './features/ContractManagement/Contracts';
 import Dashboard from './features/Dashboard/Dashboard';
 import Map from './features/map/Map';
+import Login from './features/auth/login/Login';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -18,8 +19,9 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route index element={<Login />}/>
           <Route path="/" element={<App />}/>
-          <Route index element={<Map/>}/>
+          <Route path="map" element={<Map/>}/>
           <Route path="contract-management" element={<Contracts />}/>
           <Route path='dashboard' element={<Dashboard />}/>
         </Routes>
