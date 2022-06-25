@@ -2,7 +2,9 @@ import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@redu
 import counterReducer from '../features/counter/counterSlice';
 import dropDownReducer from '../features/menus/dropDownSlice';
 import filterMenuReducer from '../features/menus/fiterMenu/filterMenuSlice';
-import { api } from '../services/api';
+import authSliceReducer from '../features/auth/login/authSlice';
+import { apiAuth } from '../services/apiAuth';
+import { apiFilterMenu } from '../services/apiFilterMenu';
 import { listenerMiddleware } from './middleware/listenerMiddleware';
 
 export const store = configureStore({
@@ -10,10 +12,13 @@ export const store = configureStore({
     counter: counterReducer,
     dropDown: dropDownReducer,
     filterMenu: filterMenuReducer,
-    [api.reducerPath]: api.reducer
+    auth: authSliceReducer,
+    [apiFilterMenu.reducerPath]: apiFilterMenu.reducer,
+    [apiAuth.reducerPath]: apiAuth.reducer
   },
   middleware: (getDefaultMiddleware) => 
-    getDefaultMiddleware().prepend(listenerMiddleware.middleware, api.middleware),
+    getDefaultMiddleware().prepend(listenerMiddleware.middleware, 
+      apiFilterMenu.middleware, apiAuth.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

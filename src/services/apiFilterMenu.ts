@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { apiURL } from '../helpers/variables';
 
-export const api = createApi({
-    reducerPath: 'api',
+export const apiFilterMenu = createApi({
+    reducerPath: 'apiFilterMenu',
     baseQuery: fetchBaseQuery({
         baseUrl: `${apiURL}`
     }),
@@ -32,4 +32,4 @@ export const api = createApi({
     })
 });
 
-export const { useFiscalYearsQuery, useLazyRegionsQuery , useLazyLocationsQuery} = api;
+export const { useFiscalYearsQuery, useLazyRegionsQuery , useLazyLocationsQuery} = apiFilterMenu;
