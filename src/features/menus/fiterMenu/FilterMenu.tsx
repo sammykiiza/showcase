@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { checkFilterLocalStorage } from '../../../helpers/functions/checkFilterLocalStorage';
 import { RootState } from '../../../app/store'
 import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
-import { api, useFiscalYearsQuery } from '../../../services/api';
+import { apiFilterMenu, useFiscalYearsQuery } from '../../../services/apiFilterMenu';
 
 function FilterMenu() {
     const menuState = useAppSelector(((state:RootState) => state.dropDown.closeMenu));
@@ -14,9 +14,9 @@ function FilterMenu() {
 
     const fiscalYears = useFiscalYearsQuery();
 
-    const [ triggerRegions, regions, promiseRegions ] = api.useLazyRegionsQuery({refetchOnFocus:true});
+    const [ triggerRegions, regions, promiseRegions ] = apiFilterMenu.useLazyRegionsQuery(undefined);
 
-    const [ triggerLocations, locations, promiseLocations ] = api.useLazyLocationsQuery({refetchOnFocus:true});
+    const [ triggerLocations, locations, promiseLocations ] = apiFilterMenu.useLazyLocationsQuery(undefined);
 
     useEffect(() => {
         checkFilterLocalStorage();
@@ -62,7 +62,7 @@ function FilterMenu() {
             className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3" 
             name="Region"
             id="region"
-            onClick={async () => { await triggerRegions() }}
+            onMouseEnter={async () => { await triggerRegions().unwrap() }}
             onChange={(e) => {
                 dispatch(setRegion(e.currentTarget.value))
             }}
@@ -78,7 +78,7 @@ function FilterMenu() {
             className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3"
             name="Council"
             id="council"
-            onClick={async () => {await triggerLocations()}}
+            onMouseEnter={async () => {await triggerLocations().unwrap()}}
             onChange={(e) => dispatch(setCouncil(e.currentTarget.value))}
             >
                 {locations.currentData === undefined || locations.isFetching
