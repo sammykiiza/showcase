@@ -3,15 +3,12 @@ import MainLayout from '../Layouts/MainLayout'
 import NavBar from '../menus/NavBar'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import './styles.css'
-import FilterMenu from '../menus/fiterMenu/FilterMenu'
-
 
 function Map() {
   return (
     <>
     <NavBar title='Map'/>
       <MainLayout>
-        <FilterMenu />
         <div className='leaflet-container mt-2 -ml-[2%]'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
@@ -29,7 +26,6 @@ function Map() {
             </Marker>
           </MapContainer>
         </div>
-
       </MainLayout>
     </>
   )
