@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { checkFilterLocalStorage } from '../../../helpers/functions/checkFilterLocalStorage';
 import { RootState } from '../../../app/store'
@@ -6,7 +6,7 @@ import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
 import { apiFilterMenu, useFiscalYearsQuery } from '../../../services/apiFilterMenu';
 
 function FilterMenu() {
-    const menuState = useAppSelector(((state:RootState) => state.dropDown.closeMenu));
+    const menuState:boolean = useAppSelector(((state:RootState) => state.dropDown.closeMenu));
     const dispatch = useAppDispatch();
     const fiscalYear = localStorage.getItem('fiscalYear');
     const region = localStorage.getItem('region');
@@ -18,10 +18,24 @@ function FilterMenu() {
 
     const [ triggerLocations, locations, promiseLocations ] = apiFilterMenu.useLazyLocationsQuery(undefined);
 
+    const [ councilName, setCouncilName ] = useState("");
+
     useEffect(() => {
         checkFilterLocalStorage();
     },
         [fiscalYear, region, council]
+    );
+
+    useEffect(() => {
+        const splitCouncil = (text:string): string => {
+            const array = text?.split(",");
+            let name;
+            array? name = array[1] : name = "";
+            return name;
+        }
+        council?  setCouncilName(splitCouncil(council)) : console.log('No location');
+    },
+        [council]
     );
 
     const changeLocation = () => {
@@ -40,6 +54,7 @@ function FilterMenu() {
                 Change Location
             </button>
             <h1 className='pt-3 pl-4 text-xl'>Current Location:</h1>
+            <span className='pt-3 pl-2 text-xl font-bold'>{councilName}</span>
         </div>
         
         <div className={(menuState ?
@@ -90,7 +105,7 @@ function FilterMenu() {
                         {locations.currentData === undefined || locations.isFetching
                             || locations.isLoading || !locations.isSuccess ? <option>Loading</option> : <option value="0">Council*</option>}
                         {locations.data?.map((location) => (
-                            <option key={location.id} value={location.id}>{location.name}</option>
+                            <option key={location.id} value={ [location.id, location.name] } >{location.name}</option>
                         ))}
                     </select>
                 </div>
