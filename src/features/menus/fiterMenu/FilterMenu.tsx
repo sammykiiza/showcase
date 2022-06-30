@@ -53,8 +53,8 @@ function FilterMenu() {
             >
                 Change Location
             </button>
-            <h1 className='pt-3 pl-4 text-xl'>Current Location:</h1>
-            <span className='pt-3 pl-2 text-xl font-bold'>{councilName}</span>
+            <h1 className='pt-3 pl-4 text-xl text-indigo-700'>Current Location:</h1>
+            <span className='pt-3 pl-2 text-xl font-bold text-indigo-700'>{councilName}</span>
         </div>
         
         <div className={(menuState ?
