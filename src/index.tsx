@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contracts from './features/ContractManagement/Contracts';
