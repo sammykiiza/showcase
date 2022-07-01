@@ -7,9 +7,9 @@ import './styles.css'
 function Map() {
   return (
     <>
-    <NavBar title='Map'/>
       <MainLayout>
-        <div className='leaflet-container mt-2 -ml-[2%]'>
+      <NavBar title='Map'/>
+        <div className='leaflet-container mt-2 ml-[19%] rounded-lg border-[0.5px] border-indigo-900'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
             zoom={13}

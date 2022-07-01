@@ -1,8 +1,6 @@
 import React, {Fragment} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { RootState } from '../../app/store'
-import { useAppSelector } from '../../app/hooks'
 
 interface Navigation {
   name: string,
@@ -26,13 +24,11 @@ interface Props {
 
 
 function NavBar(props:Props) {
-
-  const menuState = useAppSelector((state:RootState) => state.dropDown.closeMenu);
   return (
-    <Disclosure as="nav" className={(menuState? "w-full md:ml-[0%] ml-[0%]" : "") + " md:ml-[15%] ml-[30%] bg-white border-b-2"}>
+    <Disclosure as="nav" className={"bg-white border-b-2 w-[78%] mx-[20%] rounded shadow-xl"}>
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
