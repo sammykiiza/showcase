@@ -9,7 +9,7 @@ function Map() {
     <>
       <MainLayout>
       <NavBar title='Map'/>
-        <div className='leaflet-container mt-2 ml-[19%] rounded-lg border-[0.5px] border-indigo-900'>
+        <div className='leaflet-container mt-2 ml-[19%] rounded-lg drop-shadow-lg shadow-black'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
             zoom={13}
