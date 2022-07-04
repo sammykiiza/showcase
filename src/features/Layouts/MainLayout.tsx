@@ -5,18 +5,18 @@ import FilterMenu2 from '../menus/fiterMenu/FilterMenu2'
 import SideMenu2 from '../menus/SideMenu2'
 
 type Props = {
-    children?: React.ReactNode
+  children?: React.ReactNode
 }
 
-function MainLayout(props:Props) {
+function MainLayout(props: Props) {
   return (
-      <>
+    <div className='bg-slate-100 h-screen'>
       <FilterMenu2 />
-      <SideMenu2/>
+      <SideMenu2 />
       <div>
         {props.children}
       </div>
-      </>
+    </div>
 
   )
 }

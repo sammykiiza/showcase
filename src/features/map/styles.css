@@ -1,5 +1,12 @@
 .leaflet-container{
-    width: 80vw;
+    width: 81vw;
     height: 88vh;
     z-index: 0;
+}
+
+@media screen and (min-width: 1400px) {
+    .leaflet-container{
+        width: 86vw;
+        height: 92vh;
+    }
 }

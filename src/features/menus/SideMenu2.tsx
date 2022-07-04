@@ -2,7 +2,7 @@ import React from 'react'
 
 function SideMenu2() {
     return (
-        <div className="w-60 h-[98%] shadow-lg shadow-slate-500 bg-white px-1 absolute rounded-lg my-2" id="sidenavExample">
+        <div className="w-60 h-[100%] bg-white px-1 absolute rounded-r-lg" id="sidenavExample">
             <ul className="relative">
             <li className="relative" id="sidenavEx8">
                     <a href='#!' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx8" aria-expanded="true" aria-controls="collapseSidenavEx8">
