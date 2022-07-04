@@ -14,9 +14,9 @@ function FilterMenu() {
 
     const fiscalYears = useFiscalYearsQuery();
 
-    const [ triggerRegions, regions, promiseRegions ] = apiFilterMenu.useLazyRegionsQuery(undefined);
+    const [ triggerRegions, regions ] = apiFilterMenu.useLazyRegionsQuery(undefined);
 
-    const [ triggerLocations, locations, promiseLocations ] = apiFilterMenu.useLazyLocationsQuery(undefined);
+    const [ triggerLocations, locations ] = apiFilterMenu.useLazyLocationsQuery(undefined);
 
     const [ councilName, setCouncilName ] = useState("");
 

@@ -23,7 +23,7 @@ interface Props {
 }
 
 
-function NavBar(props:Props) {
+function NavBar (props:Props) {
   return (
     <Disclosure as="nav" className={"bg-white border-b-2 w-[78%] mx-[20%] rounded shadow-xl"}>
       {({ open }) => (

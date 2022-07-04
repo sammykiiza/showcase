@@ -7,9 +7,9 @@ import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
 function FilterMenu2() {
     const fiscalYears = useFiscalYearsQuery();
 
-    const [triggerRegions, regions, promiseRegions] = apiFilterMenu.useLazyRegionsQuery(undefined);
+    const [triggerRegions, regions ] = apiFilterMenu.useLazyRegionsQuery(undefined);
 
-    const [triggerLocations, locations, promiseLocations] = apiFilterMenu.useLazyLocationsQuery(undefined);
+    const [triggerLocations, locations ] = apiFilterMenu.useLazyLocationsQuery(undefined);
 
     const fiscalYear = localStorage.getItem('fiscalYear');
     const region = localStorage.getItem('region');
@@ -36,9 +36,9 @@ function FilterMenu2() {
                 <span className='p-2 text-indigo-900'>Current Location: {council}</span>
             </div>
 
-            <div className={(checkFilterLocalStorage()? "hidden" :"modal drop-shadow-2xl shadow-black fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto")} id="exampleModalCenter" tabIndex={-1} aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div className={(checkFilterLocalStorage()? "hidden" :"modal fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto")} id="exampleModalCenter" tabIndex={-1} aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
                 <div className="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-                    <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                    <div className="modal-content border-none relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding shadow-2xl shadow-slate-600 rounded-lg outline-none text-current">
                         <div className="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
                             <h5 className="text-xl font-medium leading-normal text-indigo-900" id="exampleModalScrollableLabel">
                                 Choose Your Location
@@ -53,7 +53,9 @@ function FilterMenu2() {
                                 name="Fiscal Year"
                                 id="fiscal-year"
                                 onChange={(e) => {
-                                    dispatch(setFiscalYear(e.currentTarget.value))
+                                    dispatch(setFiscalYear(e.currentTarget.value));
+                                    localStorage.removeItem('region');
+                                    localStorage.removeItem('council');
                                 }}
                             >
                                 <option>Fiscal Year*</option>
