@@ -10,10 +10,10 @@ type Props = {
 
 function MainLayout(props: Props) {
   return (
-    <div className='bg-slate-100 h-screen w-screen'>
+    <div className='flex justify-between bg-slate-100 h-screen w-screen'>
       <FilterMenu2 />
       <SideMenu2 />
-      <div>
+      <div className='grid justify-items-center lg:basis-[82.5%] 2xl:basis-[87%]'>
         {props.children}
       </div>
     </div>
