@@ -10,7 +10,7 @@ type Props = {
 
 function MainLayout(props: Props) {
   return (
-    <div className='bg-slate-100 h-screen'>
+    <div className='bg-slate-100 h-screen w-screen'>
       <FilterMenu2 />
       <SideMenu2 />
       <div>

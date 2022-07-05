@@ -21,21 +21,9 @@ function FilterMenu2() {
         [fiscalYear, region, council]
     );
 
-    const changeLocation = () => {
-        localStorage.clear();
-        window.location.reload();
-    }
-
     const dispatch = useAppDispatch();
     return (
         <div>
-            <div className={(checkFilterLocalStorage()? "absolute 2xl:left-[19%] left-[26%] 2xl:top-[1.5%] top-[2.3%] z-10" : "hidden")}>
-                <button onClick={changeLocation} type="button" className="inline-block px-6 py-2.5 bg-indigo-900 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">
-                    Change Location
-                </button>
-                <span className='p-2 text-indigo-900'>Current Location: {council}</span>
-            </div>
-
             <div className={(checkFilterLocalStorage()? "hidden" :"modal fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto")} id="exampleModalCenter" tabIndex={-1} aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
                 <div className="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
                     <div className="modal-content border-none relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding shadow-2xl shadow-slate-600 rounded-lg outline-none text-current">

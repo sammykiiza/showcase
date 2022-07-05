@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import ChangeLocationButton from '../location/ChangeLocationButton'
 
 interface Navigation {
   name: string,
@@ -25,7 +26,7 @@ interface Props {
 
 function NavBar (props:Props) {
   return (
-    <Disclosure as="nav" className={"bg-white 2xl:w-[85%] w-[78%] 2xl:mx-[14%] mx-[20%] rounded-md shadow-xl"}>
+    <Disclosure as="nav" className={"bg-white 2xl:w-[85%] w-[78%] 2xl:mx-[14.5%] mx-[20%] rounded-md shadow-xl"}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-8">
@@ -42,12 +43,13 @@ function NavBar (props:Props) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
-                  <h3 className='uppercase font-semibold 2xl:-ml-[490%]'>{props.title}</h3>
+              <div className="flex">
+                <div className="flex items-center">
+                  <h3 className='uppercase font-semibold'>{props.title}</h3>
+                <ChangeLocationButton/>
                 </div>
               </div>
-              <div className="absolute inset-y-0 2xl:-mr-[15%] right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
                   className="bg-gradient-to-r from-indigo-700 to-indigo-900 p-1 rounded-full text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
