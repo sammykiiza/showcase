@@ -26,11 +26,11 @@ interface Props {
 
 function NavBar (props:Props) {
   return (
-    <Disclosure as="nav" className={"bg-white w-[78vw] rounded-md shadow-xl"}>
+    <Disclosure as="nav" className={"bg-white lg:w-[78vw] md:w-[70vw] rounded-md shadow-xl"}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-8">
-            <div className="relative flex items-center 2xl:items-end justify-between h-16">
+            <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -43,13 +43,13 @@ function NavBar (props:Props) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex">
+              <div className="flex-1">
                 <div className="flex items-center">
                   <h3 className='uppercase font-semibold'>{props.title}</h3>
                 <ChangeLocationButton/>
                 </div>
               </div>
-              <div className="absolute inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
                   className="bg-gradient-to-r from-indigo-700 to-indigo-900 p-1 rounded-full text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"

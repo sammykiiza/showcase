@@ -3,3 +3,9 @@
     height: 88vh;
     z-index: 0;
 }
+
+@media screen and (max-width: 1322px) {
+    .leaflet-container {
+        width: 70vw;
+    }
+}
