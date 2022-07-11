@@ -28,13 +28,13 @@ function SideMenu2() {
                             <Link to="/road-network/roads" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Roads</Link>
                         </li>
                         <li className="relative">
-                            <a href="#!" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Regions</a>
+                            <a href="/road-network/regions" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Regions</a>
                         </li>
                         <li className="relative">
-                            <a href="#!" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Locations</a>
+                            <a href="/road-network/locations" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Locations</a>
                         </li>
                         <li className="relative">
-                            <a href="#!" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Road Types</a>
+                            <a href="/road-network/road-types" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Road Types</a>
                         </li>
                     </ul>
                 </li>

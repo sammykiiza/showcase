@@ -4,45 +4,53 @@ import NavBar from '../../menus/NavBar'
 import DataTableBase from '../../tables/DataTableBase'
 
 function Roads() {
-    const data = [
+    const columns = [
         {
-            column: 'Date Uploaded',
-            value: 'true',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'fair',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'ask',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'true',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'true',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'true',
+            name: 'Date Uploaded',
         },
         {
-            column: 'Date Uploaded',
-            value: 'true',
-        },
-        {
-            column: 'Date Uploaded',
-            value: 'true',
+            name: 'Date Uploaded',
         },
     ];
+
+    const data = [
+        {   
+            value: 'value1',
+            cell: 'test1'
+        },
+        {
+            value: 'value2',
+            cell: 'test2'
+        },
+        {
+            value: 'value3',
+            cell: 'test3'
+        },
+        {
+            value: 'value4',
+            cell: 'test4'
+        }
+    ]
     return (
         <>
             <MainLayout>
                 <NavBar title="Roads" />
-                <DataTableBase data={data}/>
+                <DataTableBase columns={columns} data={data}/>
             </MainLayout>
         </>
     )

@@ -6,46 +6,57 @@ import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
 
-  const data = [
+  const columns = [
     {
-      column: 'Date Uploaded',
-      value: 'true',
+        name: 'Date Uploaded',
     },
     {
-      column: 'Road Number',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'Road Name',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'Road Type',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'Segment Number',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'Start(KM)',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'End(KM)',
-      value: 'true'
+        name: 'Date Uploaded',
     },
     {
-      column: 'Road Condition Index',
-      value: 'true'
+        name: 'Date Uploaded',
     },
-  ];
+];
+
+const data = [
+    {   
+        value: 'value1',
+        cell: 'test'
+    },
+    {
+        value: 'value2',
+        cell: 'test'
+    },
+    {
+        value: 'value3',
+        cell: 'test'
+    },
+    {
+        value: 'value4',
+        cell: 'test'
+    }
+]
   return (
     <>
       <NavBar title="Dashboard" />
       <MainLayout>
         <FilterMenu />
-        <DataTableBase data={data} />
+        <DataTableBase columns={columns} data={data} />
         <span>Dashboard</span>
       </MainLayout>
     </>

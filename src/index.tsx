@@ -29,12 +29,15 @@ root.render(
           <Route path="map" element={<Map/>}/>
           <Route path="contract-management" element={<Contracts />}/>
           <Route path='dashboard' element={<Dashboard />}/>
+
+          {/* road network routes */}
           <Route path='road-network'>
             <Route path='locations' element={<Locations />}/>
             <Route path='regions' element={<Regions/>}/>
             <Route path='roads' element={<Roads/>}/>
             <Route path='road-types' element={<RoadTypes/>}/>
           </Route>
+
         </Routes>
       </BrowserRouter>
     </Provider>
