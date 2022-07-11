@@ -6,6 +6,12 @@
 
 @media screen and (max-width: 1322px) {
     .leaflet-container {
+        width: 78vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .leaflet-container {
         width: 70vw;
     }
 }
