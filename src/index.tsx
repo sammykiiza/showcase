@@ -11,6 +11,10 @@ import Contracts from './features/ContractManagement/Contracts';
 import Dashboard from './features/Dashboard/Dashboard';
 import Map from './features/map/Map';
 import Login from './features/auth/login/Login';
+import Locations from './features/RoadNetwork/Locations/Locations';
+import Regions from './features/RoadNetwork/Regions/Regions';
+import Roads from './features/RoadNetwork/Roads/Roads';
+import RoadTypes from './features/RoadNetwork/RoadTypes/RoadTypes';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -25,6 +29,12 @@ root.render(
           <Route path="map" element={<Map/>}/>
           <Route path="contract-management" element={<Contracts />}/>
           <Route path='dashboard' element={<Dashboard />}/>
+          <Route path='road-network'>
+            <Route path='locations' element={<Locations />}/>
+            <Route path='regions' element={<Regions/>}/>
+            <Route path='roads' element={<Roads/>}/>
+            <Route path='road-types' element={<RoadTypes/>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -6,58 +6,48 @@ import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
 
-const columns = [
-  {
-      name: 'Date Uploaded',
-      sortable: true,
-  },
-  {
-      name: 'Road Number',
-      sortable: true
-  },
-  {
-    name: 'Road Name',
-    sortable: true
-},
-{
-  name: 'Road Type',
-  sortable: true
-},
-{
-  name: 'Segment Number',
-  sortable: true
-},
-{
-  name: 'Start(KM)',
-  sortable: true
-},
-{
-  name: 'End(KM)',
-  sortable: true
-},
-{
-  name: 'Road Condition Index',
-  sortable: true
-},
-];
-
-const data = [
-  {
-      title: 'Beetlejuice',
-  },
-  {
-      title: 'Ghostbusters',
-  },
-]
-
+  const data = [
+    {
+      column: 'Date Uploaded',
+      value: 'true',
+    },
+    {
+      column: 'Road Number',
+      value: 'true'
+    },
+    {
+      column: 'Road Name',
+      value: 'true'
+    },
+    {
+      column: 'Road Type',
+      value: 'true'
+    },
+    {
+      column: 'Segment Number',
+      value: 'true'
+    },
+    {
+      column: 'Start(KM)',
+      value: 'true'
+    },
+    {
+      column: 'End(KM)',
+      value: 'true'
+    },
+    {
+      column: 'Road Condition Index',
+      value: 'true'
+    },
+  ];
   return (
     <>
-    <NavBar title="Dashboard"/>
-    <MainLayout>
-      <FilterMenu />
-      <DataTableBase columns = {columns} data = {data}/>        
+      <NavBar title="Dashboard" />
+      <MainLayout>
+        <FilterMenu />
+        <DataTableBase data={data} />
         <span>Dashboard</span>
-    </MainLayout>
+      </MainLayout>
     </>
   )
 }

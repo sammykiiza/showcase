@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SideMenu2() {
     return (
         <div className="w-60 h-[100%] bg-white px-1 absolute rounded-r-lg" id="sidenavExample">
             <ul className="relative">
             <li className="relative" id="sidenavEx8">
-                    <a href='#!' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx8" aria-expanded="true" aria-controls="collapseSidenavEx8">
+                    <Link to='/map' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" className="w-3 h-3 mr-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                         <path fill='currentColor' d="M384 476.1L192 421.2V35.93L384 90.79V476.1zM416 88.37L543.1 37.53C558.9 31.23 576 42.84 576 59.82V394.6C576 404.4 570 413.2 560.9 416.9L416 474.8V88.37zM15.09 95.13L160 37.17V423.6L32.91 474.5C17.15 480.8 0 469.2 0 452.2V117.4C0 107.6 5.975 98.78 15.09 95.13V95.13z"/>
                     </svg>
                         <span>Dashboard</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="relative" id="sidenavEx1">
                     <a href='#!' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx1" aria-expanded="true" aria-controls="collapseSidenavEx1">
@@ -24,7 +25,7 @@ function SideMenu2() {
                     </a>
                     <ul className="relative accordion-collapse collapse" id="collapseSidenavEx1" aria-labelledby="sidenavEx1" data-bs-parent="#sidenavExample">
                         <li className="relative">
-                            <a href="#!" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Roads</a>
+                            <Link to="/road-network/roads" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Roads</Link>
                         </li>
                         <li className="relative">
                             <a href="#!" className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Regions</a>
