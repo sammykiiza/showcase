@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
+import {Fragment} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { BellIcon } from '@heroicons/react/outline'
 import ChangeLocationButton from '../location/ChangeLocationButton'
 
 interface Navigation {
@@ -26,23 +26,11 @@ interface Props {
 
 function NavBar (props:Props) {
   return (
-    <Disclosure as="nav" className={"bg-white lg:w-[78vw] md:w-[70vw] sm:w-[50vw] rounded-md shadow"}>
+    <Disclosure as="nav" className={"bg-white lg:w-[78vw] md:w-[70vw] w-[93vw] rounded-md shadow"}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-8">
             <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
               <div className="flex-1">
                 <div className="flex items-center">
                   <h3 className='uppercase font-semibold'>{props.title}</h3>

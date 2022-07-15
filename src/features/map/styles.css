@@ -1,17 +1,17 @@
 .leaflet-container{
-    width: 81vw;
+    width: 96vw;
     height: 89vh;
     z-index: 0;
 }
 
-@media screen and (max-width: 1322px) {
+@media screen and (min-width: 1024px) {
     .leaflet-container {
         width: 78vw;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px) {
     .leaflet-container {
-        width: 70vw;
+        width: 80vw;
     }
 }
