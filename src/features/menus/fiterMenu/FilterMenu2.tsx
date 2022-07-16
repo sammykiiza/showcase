@@ -14,6 +14,7 @@ function FilterMenu2() {
     const fiscalYear = localStorage.getItem('fiscalYear');
     const region = localStorage.getItem('region');
     const council = localStorage.getItem('council');
+    
 
     useEffect(() => {
         checkFilterLocalStorage();
@@ -78,7 +79,7 @@ function FilterMenu2() {
                                 {locations.currentData === undefined || locations.isFetching
                                     || locations.isLoading || !locations.isSuccess ? <option>Loading</option> : <option value="0">Council*</option>}
                                 {locations.data?.map((location) => (
-                                    <option key={location.id} value={location.name} >{location.name}</option>
+                                    <option key={location.id} value={ [location.id, location.name] } >{location.name}</option>
                                 ))}
                             </select>
                         </div>

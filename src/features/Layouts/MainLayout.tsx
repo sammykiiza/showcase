@@ -13,8 +13,8 @@ function MainLayout(props: Props) {
     <div className='flex justify-between bg-slate-100 h-screen w-screen'>
       <FilterMenu2 />
       <SideMenu2 />
-      <div className='grid justify-items-center basis-[100%] md:basis-[73%] lg:basis-[82%] 2xl:basis-[87%]'>
-        {props.children}
+      <div className='sm:w-screen md:w-[73%] lg:w-[76.5%] xl:w-[80%] 2xl:w-[83%]'>
+          {props.children}
       </div>
     </div>
 

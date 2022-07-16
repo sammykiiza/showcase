@@ -15,7 +15,7 @@ function DataTableBase(props: TableProps) {
     return (
         <div className='h-[89vh]'>
             <div className="flex flex-col">
-                <div className="overflow-x-auto lg:w-auto md:w-[80%] sm:-mx-6 md:-mx-16 lg:-mx-0 lg:ml-auto md:ml-[10%]">
+                <div className="overflow-x-auto w-[95%] sm:mx-[1%] md:mx-4 lg:mx-4 2xl:-mx-2">
                     <div className="py-2 inline-block min-w-full">
                         <div className="overflow-hidden rounded-lg shadow-md">
                             <table className="min-w-full">
