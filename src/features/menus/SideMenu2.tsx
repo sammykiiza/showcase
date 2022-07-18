@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function SideMenu2() {
     return (
-        <div className="w-40 md:w-60 md:w-48 lg:w-60 md:h-[100%] md:bg-white md:absolute md:rounded-r-lg md:block hidden hover:block" id="sidenavExample">
+        <div className="w-40 md:w-60 md:w-48 lg:w-60 h-screen md:bg-white md:absolute md:rounded-r-lg md:block hidden hover:block" id="sidenavExample">
             <ul className="relative">
             <li className="relative" id="sidenavEx8">
                     <Link to='/map' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-indigo-900 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">
