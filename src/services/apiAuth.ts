@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from '../app/store'
+import { splitString } from '../helpers/functions/splitString'
 import { apiURL } from '../helpers/variables'
 
 export interface User {
@@ -17,6 +18,12 @@ export interface LoginRequest {
   email: string
   password: string
 }
+
+interface RoadResponse {
+  [key: string] : any
+}
+
+const council = localStorage.getItem('council');
 
 export const apiAuth = createApi({
   baseQuery: fetchBaseQuery({
@@ -38,10 +45,22 @@ export const apiAuth = createApi({
         body: credentials,
       }),
     }),
+
+    // road network endpoints
+    roads: builder.query<RoadResponse[]|undefined, void>({
+      query: () => {
+          const locationId = splitString(council, 0);
+          return {
+              url: `road-network/road-sections?_end=10&_order=ASC&_sort=id&_start=0&locationId=${locationId}`,
+          }
+
+      }
+  }),
+
     protected: builder.mutation<{ message: string }, void>({
       query: () => 'protected',
     }),
   }),
 })
 
-export const { useLoginMutation, useProtectedMutation } = apiAuth
+export const { useLoginMutation, useProtectedMutation, useRoadsQuery } = apiAuth

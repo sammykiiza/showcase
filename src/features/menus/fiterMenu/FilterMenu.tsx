@@ -4,6 +4,7 @@ import { checkFilterLocalStorage } from '../../../helpers/functions/checkFilterL
 import { RootState } from '../../../app/store'
 import { setCouncil, setFiscalYear, setRegion } from './filterMenuSlice';
 import { apiFilterMenu, useFiscalYearsQuery } from '../../../services/apiFilterMenu';
+import { splitString } from '../../../helpers/functions/splitString';
 
 function FilterMenu() {
     const menuState:boolean = useAppSelector(((state:RootState) => state.dropDown.closeMenu));
@@ -27,13 +28,7 @@ function FilterMenu() {
     );
 
     useEffect(() => {
-        const splitCouncil = (text:string): string => {
-            const array = text?.split(",");
-            let name;
-            array? name = array[1] : name = "";
-            return name;
-        }
-        council?  setCouncilName(splitCouncil(council)) : console.log('No location');
+        council?  setCouncilName(splitString(council, 1)) : console.log('No location');
     },
         [council]
     );

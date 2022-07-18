@@ -1,17 +1,23 @@
 .leaflet-container{
-    width: 96vw;
+    width: 96%;
     height: 89vh;
     z-index: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .leaflet-container {
-        width: 78vw;
+        width: 99%;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .leaflet-container {
-        width: 80vw;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .leaflet-container {
+        width: 100%;
     }
 }

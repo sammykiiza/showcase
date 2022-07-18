@@ -14,6 +14,7 @@ function MainLayout(props: Props) {
       <FilterMenu2 />
       <SideMenu2 />
       <div className='sm:w-screen md:w-[73%] lg:w-[76.5%] xl:w-[80%] 2xl:w-[83%]'>
+      {/* sm:w-screen md:w-[73%] lg:w-[76.5%] xl:w-[80%] 2xl:w-[83%] */}
           {props.children}
       </div>
     </div>

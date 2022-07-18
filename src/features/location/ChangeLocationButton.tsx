@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { checkFilterLocalStorage } from '../../helpers/functions/checkFilterLocalStorage';
+import { splitString } from '../../helpers/functions/splitString';
 
 function ChangeLocationButton() {
 
@@ -20,13 +21,7 @@ function ChangeLocationButton() {
     );
 
     useEffect(() => {
-        const splitCouncil = (text:string): string => {
-            const array = text?.split(",");
-            let name;
-            array? name = array[1] : name = "";
-            return name;
-        }
-        council?  setCouncilName(splitCouncil(council)) : console.log('No location');
+        council?  setCouncilName(splitString(council, 1)) : console.log('No location');
     },
         [council]
     );
