@@ -26,7 +26,7 @@ interface Props {
 
 function NavBar (props:Props) {
   return (
-    <Disclosure as="nav" className={"bg-white lg:w-[97%] md:w-[93%] w-screen rounded-md shadow sticky top-0"}>
+    <Disclosure as="nav" className={"bg-white w-full w-screen rounded-md shadow sticky top-0"}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-8">
