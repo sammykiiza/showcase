@@ -5,7 +5,7 @@ import NavBar from '../menus/NavBar'
 function Contracts() {
   return (
     <>
-    <NavBar title="Contracts"/>
+    <NavBar />
     <MainLayout>
         <>Contracts</>
     </MainLayout>

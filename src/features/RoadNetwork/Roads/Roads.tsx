@@ -58,7 +58,7 @@ function Roads() {
     return (
         <>
             <MainLayout>
-                <NavBar title="Roads" />
+                <NavBar />
                 <DataTableBase columns={columns} data={data}/>
             </MainLayout>
         </>

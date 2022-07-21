@@ -49,7 +49,7 @@ const data = [
   return (
     <div>
       <MainLayout>
-        <NavBar title='Road Types'/>
+        <NavBar />
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </div>

@@ -49,7 +49,7 @@ const data = [
   return (
     <div>
       <MainLayout>
-        <NavBar title='Locations'/>
+        <NavBar />
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </div>

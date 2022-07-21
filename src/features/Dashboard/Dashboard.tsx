@@ -53,7 +53,7 @@ const data = [
 ]
   return (
     <>
-      <NavBar title="Dashboard" />
+      <NavBar />
       <MainLayout>
         <FilterMenu />
         <DataTableBase columns={columns} data={data} />

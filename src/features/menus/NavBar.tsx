@@ -19,12 +19,9 @@ const navigation: Navigation[] = [
 function classNames(...classes:string[]) {
   return classes.filter(Boolean).join(' ')
 }
-interface Props {
-  title: string
-}
 
 
-function NavBar (props:Props) {
+function NavBar () {
   return (
     <Disclosure as="nav" className={"bg-white w-full w-screen rounded-md shadow sticky top-0"}>
       {({ open }) => (
@@ -33,8 +30,7 @@ function NavBar (props:Props) {
             <div className="relative flex items-center justify-between h-16">
               <div className="flex-1">
                 <div className="flex items-center">
-                  <h3 className='uppercase font-semibold'>{props.title}</h3>
-                <ChangeLocationButton/>
+                  {/* <h3 className='uppercase font-semibold'>{props.title}</h3> */}
                 </div>
               </div>
               <div className="inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
