@@ -1,6 +1,6 @@
 import React from 'react'
 import MainLayout from '../../Layouts/MainLayout';
-import NavBar from '../../menus/NavBar';
+import PageTitle from '../../Layouts/titleComponents/PageTitle';
 import DataTableBase from '../../tables/DataTableBase';
 
 function Locations() {
@@ -49,7 +49,7 @@ const data = [
   return (
     <div>
       <MainLayout component='Locations view'>
-        <NavBar />
+        <PageTitle title='Locations'/>
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </div>

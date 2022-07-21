@@ -22,8 +22,8 @@ function MainLayout(props: Props) {
       <div className='place-self-end'>
         <ChangeLocationButton />
       </div>
-      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-xl h-[70%]'>
-        <div className='bg-white p-1 border-b-slate-300'>{props.component}</div>
+      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-md h-[70%]'>
+        <div className='bg-white rounded-t-md p-1 border-b-slate-300'>{props.component}</div>
         {props.children}
       </div>
     </div>

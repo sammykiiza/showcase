@@ -1,7 +1,4 @@
-import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
-import FilterMenu from '../menus/fiterMenu/FilterMenu';
-import NavBar from '../menus/NavBar'
 import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
