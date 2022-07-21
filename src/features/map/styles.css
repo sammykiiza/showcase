@@ -3,21 +3,3 @@
     height: 82vh;
     /* z-index: 0; */
 }
-
-@media screen and (min-width: 768px) {
-    .leaflet-container {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .leaflet-container {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .leaflet-container {
-        width: 100%;
-    }
-}

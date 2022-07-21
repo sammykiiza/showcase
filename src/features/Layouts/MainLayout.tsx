@@ -7,7 +7,8 @@ import NavBar from '../menus/NavBar'
 import SideMenu2 from '../menus/SideMenu2'
 
 type Props = {
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  component: string
 }
 
 function MainLayout(props: Props) {
@@ -21,7 +22,8 @@ function MainLayout(props: Props) {
       <div className='place-self-end'>
         <ChangeLocationButton />
       </div>
-      <div className='mx-[2%] md:ml-[28%] xl:ml-[22%] 2xl:ml-[17%] mt-[1%]'>
+      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-xl h-[70%]'>
+        <div className='bg-white p-1 border-b-slate-300'>{props.component}</div>
         {props.children}
       </div>
     </div>

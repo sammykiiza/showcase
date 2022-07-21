@@ -48,7 +48,7 @@ const data = [
 ]
   return (
     <>
-      <MainLayout>
+      <MainLayout component='Regions view'>
         <NavBar />
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>

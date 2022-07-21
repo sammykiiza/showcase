@@ -53,9 +53,7 @@ const data = [
 ]
   return (
     <>
-      <NavBar />
-      <MainLayout>
-        <FilterMenu />
+      <MainLayout component='Dashboard view'>
         <DataTableBase columns={columns} data={data} />
         <span>Dashboard</span>
       </MainLayout>

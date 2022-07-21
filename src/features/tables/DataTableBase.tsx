@@ -13,8 +13,8 @@ interface TableProps {
 function DataTableBase(props: TableProps) {
     return (
         <div>
-            <div className="flex flex-col h-[89vh]">
-                <div className="overflow-x-auto w-full sm:mx-[1%] md:-mx-4 lg:-mx-4 2xl:-mx-4">
+            <div className="flex flex-col">
+                <div className="overflow-x-auto w-full mx-auto">
                     <div className="py-2 inline-block min-w-full">
                         <div className="overflow-hidden rounded-lg shadow-md">
                             <table className="min-w-full">

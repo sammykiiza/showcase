@@ -2,7 +2,7 @@ import React from 'react'
 import { objectFilter } from '../../../helpers/functions/objectFilter';
 import { useRoadsQuery } from '../../../services/apiAuth';
 import MainLayout from '../../Layouts/MainLayout'
-import NavBar from '../../menus/NavBar'
+import PageTitle from '../../Layouts/titleComponents/PageTitle';
 import DataTableBase from '../../tables/DataTableBase'
 
 function Roads() {
@@ -30,26 +30,7 @@ function Roads() {
         },
     ];
 
-    const response = [
-        {   
-            value: 'value1',
-            cell: 'test1'
-        },
-        {
-            value: 'value2',
-            cell: 'test2'
-        },
-        {
-            value: 'value3',
-            cell: 'test3'
-        },
-        {
-            value: 'value4',
-            cell: 'test4'
-        }
-    ]
-
-    const { data, error } = useRoadsQuery();
+    const { data } = useRoadsQuery();
 
     const object = {one: '1', two: '2', three: '3'}
     objectFilter(object, ['two']);
@@ -57,8 +38,8 @@ function Roads() {
 
     return (
         <>
-            <MainLayout>
-                <NavBar />
+            <MainLayout component='Roads view'>
+                <PageTitle title='Roads'/>
                 <DataTableBase columns={columns} data={data}/>
             </MainLayout>
         </>

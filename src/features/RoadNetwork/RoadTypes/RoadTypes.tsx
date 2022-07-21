@@ -48,7 +48,7 @@ const data = [
 ]
   return (
     <div>
-      <MainLayout>
+      <MainLayout component='Road Types view'>
         <NavBar />
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>

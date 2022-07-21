@@ -5,8 +5,7 @@ import NavBar from '../menus/NavBar'
 function Contracts() {
   return (
     <>
-    <NavBar />
-    <MainLayout>
+    <MainLayout component='Contracts view'>
         <>Contracts</>
     </MainLayout>
     </>
