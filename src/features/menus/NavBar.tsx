@@ -41,7 +41,7 @@ function NavBar () {
                 </button> */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="ml-3 relative z-50">
                   <div>
                     <Menu.Button className="bg-black flex text-sm rounded-full">
                       <span className="sr-only">Open user menu</span>

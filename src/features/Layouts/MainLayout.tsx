@@ -20,10 +20,10 @@ function MainLayout(props: Props) {
         <NavBar />
         <SideMenu2 />
       </div>
-      <div className='place-self-end'>
+      <div className='place-self-end inline-block'>
         <ChangeLocationButton />
       </div>
-      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] pt-[1%] -mt-10'>
+      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] pt-[1%] -mt-10 w-20'>
         <PageTitle title={props.component}/>
       </div>
       <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-md h-[80%]'>
