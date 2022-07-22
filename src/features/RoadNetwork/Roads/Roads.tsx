@@ -2,7 +2,6 @@ import React from 'react'
 import { objectFilter } from '../../../helpers/functions/objectFilter';
 import { useRoadsQuery } from '../../../services/apiAuth';
 import MainLayout from '../../Layouts/MainLayout'
-import PageTitle from '../../Layouts/titleComponents/PageTitle';
 import DataTableBase from '../../tables/DataTableBase'
 
 function Roads() {
@@ -38,8 +37,7 @@ function Roads() {
 
     return (
         <>
-            <MainLayout component='Roads view'>
-                <PageTitle title='Roads'/>
+            <MainLayout component='Roads'>
                 <DataTableBase columns={columns} data={data}/>
             </MainLayout>
         </>

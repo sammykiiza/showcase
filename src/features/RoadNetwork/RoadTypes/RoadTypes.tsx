@@ -1,6 +1,5 @@
 import React from 'react'
 import MainLayout from '../../Layouts/MainLayout';
-import PageTitle from '../../Layouts/titleComponents/PageTitle';
 import DataTableBase from '../../tables/DataTableBase';
 
 function RoadTypes() {
@@ -48,8 +47,7 @@ const data = [
 ]
   return (
     <div>
-      <MainLayout component='Road Types view'>
-        <PageTitle title='Road Types'/>
+      <MainLayout component='Road Types'>
         <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </div>

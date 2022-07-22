@@ -5,6 +5,7 @@ import NavBar from '../menus/NavBar'
 // import FilterMenu from '../menus/fiterMenu/FilterMenu'
 // import SideMenu from '../menus/SideMenu'
 import SideMenu2 from '../menus/SideMenu2'
+import PageTitle from './titleComponents/PageTitle'
 
 type Props = {
   children?: React.ReactNode,
@@ -22,8 +23,11 @@ function MainLayout(props: Props) {
       <div className='place-self-end'>
         <ChangeLocationButton />
       </div>
-      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-md h-[70%]'>
-        <div className='bg-white rounded-t-md p-1 border-b-slate-300'>{props.component}</div>
+      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] pt-[1%] -mt-10'>
+        <PageTitle title={props.component}/>
+      </div>
+      <div className='mx-4 md:ml-[21%] xl:ml-[19%] 2xl:ml-[14%] mt-[1%] border border-slate-300 rounded-md h-[80%]'>
+        <div className='bg-white rounded-t-md p-1 pl-3 border-b-slate-300'>{props.component + ' view'}</div>
         {props.children}
       </div>
     </div>

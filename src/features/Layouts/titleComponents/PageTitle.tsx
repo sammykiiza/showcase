@@ -6,7 +6,7 @@ interface TitleProps {
 
 function PageTitle(props:TitleProps) {
   return (
-    <span className='absolute top-[15%] md:top-[18%] xl:top-[12%] 2xl:top-[19%] left-[3%] md:left-[21%] xl:left-[19%] 2xl:left-[14%]'>
+    <span className='text-lg text-medium'>
         {props.title}
     </span>
   )

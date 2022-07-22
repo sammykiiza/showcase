@@ -1,6 +1,5 @@
 import {Fragment} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon } from '@heroicons/react/outline'
 
 interface Navigation {
   name: string,
@@ -22,35 +21,38 @@ function classNames(...classes:string[]) {
 
 function NavBar () {
   return (
-    <Disclosure as="nav" className={"bg-white w-full w-screen rounded-md shadow sticky top-0"}>
+    <Disclosure as="nav" className={"bg-black w-full w-screen sticky top-0"}>
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="relative flex items-center justify-between h-16">
+          <div className="w-full mx-auto px-8">
+            <div className="relative flex items-center justify-between h-10">
               <div className="flex-1">
                 <div className="flex items-center">
-                  {/* <h3 className='uppercase font-semibold'>{props.title}</h3> */}
+                  <h3 className='uppercase font-semibold text-white'>ITTRAMS</h3>
                 </div>
               </div>
               <div className="inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
+                {/* <button
                   type="button"
                   className="bg-gradient-to-r from-indigo-700 to-indigo-900 p-1 rounded-full text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative z-[1]">
+                <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-gradient-to-r from-indigo-700 to-indigo-900 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="bg-black flex text-sm rounded-full">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
+                      {/* <img
+                        className="h-6 w-6 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
-                      />
+                      /> */}
+                      <svg className='w-5 h-5 mr-5' role='img' data-prefix='fas' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill='white' d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/>
+                      </svg>
                     </Menu.Button>
                   </div>
                   <Transition
