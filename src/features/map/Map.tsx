@@ -1,11 +1,9 @@
 import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import './styles.css'
 
 function Map() {
   return (
-    <>
       <MainLayout component='Map'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
@@ -24,7 +22,6 @@ function Map() {
             </Marker>
           </MapContainer>
       </MainLayout>
-    </>
   )
 }
 
