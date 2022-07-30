@@ -21,7 +21,7 @@ function classNames(...classes:string[]) {
 
 function NavBar () {
   return (
-    <Disclosure as="nav" className={"bg-black w-full w-screen sticky top-0"}>
+    <Disclosure as="nav" className={"bg-black w-full w-screen"}>
       {({ open }) => (
         <>
           <div className="w-full mx-auto px-8">
@@ -41,7 +41,7 @@ function NavBar () {
                 </button> */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative z-50">
+                <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className="bg-black flex text-sm rounded-full">
                       <span className="sr-only">Open user menu</span>

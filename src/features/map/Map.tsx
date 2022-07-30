@@ -1,6 +1,7 @@
 import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import './styles.css';
 
 function Map() {
   return (
@@ -9,7 +10,7 @@ function Map() {
             center={[-15.4245, 28.3197]}  
             zoom={13}
             scrollWheelZoom={true}
-            style={{ height: '78vh', width: '100%' }}
+            style={{ height: '78vh', width: '100%', zIndex:0 }}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

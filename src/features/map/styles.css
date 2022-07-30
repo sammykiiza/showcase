@@ -1,4 +1,8 @@
-.leaflet-container{
-    width: 100%;
-    height: 82vh;
+.leaflet-container,
+div.leaflet-bottom.leaflet-right,
+div.leaflet-bottom.leaflet-left,
+div.leaflet-top.leaflet-right,
+div.leaflet-top.leaflet-left,
+div.leaflet-pane.leaflet-map-pane {
+    z-index:auto;
 }
