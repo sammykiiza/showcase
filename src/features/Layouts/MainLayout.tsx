@@ -23,7 +23,7 @@ function MainLayout(props: Props) {
           <SideMenuMobile />
           <SideMenu />
         </div>
-        <div className='col-start-1 md:col-start-2 md:ml-28 xl:ml-8 2xl:-ml-[1%] col-span-full mt-1'>
+        <div className='-translate-y-[90%] md:translate-y-0 ease-linear duration-400 col-start-1 md:col-start-2 md:ml-28 xl:ml-8 2xl:-ml-[1%] col-span-full mt-1'>
           <div className='grid'>
             <div className='inline-block justify-self-end'>
               <ChangeLocationButton />
