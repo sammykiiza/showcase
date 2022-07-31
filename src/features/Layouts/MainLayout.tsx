@@ -19,20 +19,22 @@ function MainLayout(props: Props) {
       </div>
       <FilterMenu2 />
       <div className='grid grid-cols-6'>
-        <div style={{zIndex:1}}>
+        <div style={{ zIndex: 1 }}>
           <SideMenuMobile />
           <SideMenu />
         </div>
-        <div className='-translate-y-[90%] md:translate-y-0 ease-linear duration-400 col-start-1 md:col-start-2 md:ml-28 xl:ml-8 2xl:-ml-[1%] col-span-full mt-1'>
+        <div className='-translate-y-[93vh] md:translate-y-0 ease-linear duration-400 col-start-1 md:col-start-2 md:ml-28 xl:ml-8 2xl:-ml-[1%] col-span-full mt-1'>
           <div className='grid'>
-            <div className='inline-block justify-self-end'>
-              <ChangeLocationButton />
+            <div className='flex justify-between'>
+              <div>
+                <PageTitle title={props.component} />
+              </div>
+              <div className='inline-block -mt-1 md:mb-4'>
+                <ChangeLocationButton />
+              </div>
             </div>
-            <div className='-mt-6'>
-              <PageTitle title={props.component} />
-            </div>
-            <div className='border border-slate-300 md:rounded-md h-auto w-full md:w-[99%] justify-self-center'>
-              <div className='bg-white rounded-t-md p-1 pl-3 border-b-slate-300'>{props.component + ' view'}</div>
+            <div className='border border-slate-300 md:rounded h-auto w-full md:w-[99%] justify-self-center'>
+              <div className='bg-white rounded-t p-1 pl-3 border-b-slate-300'>{props.component + ' view'}</div>
               {props.children}
             </div>
           </div>

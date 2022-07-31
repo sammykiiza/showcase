@@ -27,7 +27,7 @@ function ChangeLocationButton() {
     );
 
     return (
-        <div className={(checkFilterLocalStorage() ? "inline-block p-2  mr-4 rounded-md border border-slate-300 bg-white" : "hidden")}>
+        <div className={(checkFilterLocalStorage() ? "inline-block p-2  md:mr-1 md:rounded border border-slate-300 bg-white" : "hidden")}>
             <span className='pr-2 text-md'>Settings: {councilName}</span>
             <button onClick={changeLocation} type="button" className="inline-block px-4 py-1 bg-[#2271B1] text-white font-medium text-sm leading-tight rounded-md shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">
                 Update
