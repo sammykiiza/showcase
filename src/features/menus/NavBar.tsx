@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
+import { Disclosure, Menu, Popover, Transition } from '@headlessui/react'
+import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon } from '@heroicons/react/outline'
 
 interface Navigation {
   name: string,
@@ -39,26 +39,228 @@ function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex-1">
-                <div className="flex items-center">
-                  <h3 className='uppercase font-semibold text-white'>ITTRAMS</h3>
-                  <div className="hidden sm:block sm:ml-[12vw]">
-                    <div className="flex space-x-4">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            item.current ? 'bg-[#2271B1] text-white' : 'text-gray-300 hover:bg-[#2271B1] hover:text-white',
-                            'px-3 py-2 text-sm font-medium'
-                          )}
-                          aria-current={item.current ? 'page' : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
+                <div className="flex justify-between">
+                  <h3 className='uppercase font-semibold text-white p-2'>ITTRAMS</h3>
+                  <div className="hidden sm:block">
+                    <div className="flex">
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Road Network</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Road Inventory</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Road Condition</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Planning</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Finance</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>Contract Management</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
+
+                      <Popover>
+                        {({ open }) => (
+                          <>
+                            <Popover.Button className={`text-white text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2.5 text-sm font-medium`}>
+                              <span>User Management</span>
+                              <ChevronRightIcon
+                                className={`rotate-90 w-3 h-3 ml-2`}
+                              />
+                            </Popover.Button>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                            <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
+                              <div className="grid grid-cols-1 gap-y-1">
+                                <a href="/analytics">Analytics</a>
+                                <a href="/engagement">Engagement</a>
+                                <a href="/security">Security</a>
+                                <a href="/integrations">Integrations</a>
+                              </div></Popover.Panel>
+                              </Transition>
+                          </>
+                        )}
+                      </Popover>
                     </div>
                   </div>
-
                 </div>
               </div>
               <div className="inset-y-0 justify-end flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
