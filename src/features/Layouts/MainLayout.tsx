@@ -1,6 +1,7 @@
 import React from 'react'
 import ChangeLocationButton from '../location/ChangeLocationButton'
-import FilterMenu2 from '../menus/fiterMenu/FilterMenu2'
+// import FilterMenu2 from '../menus/fiterMenu/FilterMenu2'
+import FilterMenu3 from '../menus/fiterMenu/FilterMenu3'
 import NavBar from '../menus/NavBar'
 import SideMenu from '../menus/SideMenu'
 import SideMenuMobile from '../menus/SideMenuMobile/SideMenuMobile'
@@ -17,7 +18,7 @@ function MainLayout(props: Props) {
       <div>
         <NavBar />
       </div>
-      <FilterMenu2 />
+      <FilterMenu3 />
       <div className='grid grid-cols-6'>
         <div style={{ zIndex: 1 }}>
           <SideMenuMobile />
