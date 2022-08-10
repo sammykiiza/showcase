@@ -1,6 +1,5 @@
 import React from 'react'
 import MainLayout from '../../Layouts/MainLayout';
-import DataTableBase from '../../tables/DataTableBase';
 
 function Regions() {
   const columns = [
@@ -48,7 +47,6 @@ const data = [
   return (
     <>
       <MainLayout component='Regions'>
-        <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </>
   )

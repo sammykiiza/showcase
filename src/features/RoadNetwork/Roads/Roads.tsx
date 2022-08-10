@@ -1,8 +1,6 @@
 import React from 'react'
-import { objectFilter } from '../../../helpers/functions/objectFilter';
 import { useRoadsQuery } from '../../../services/apiAuth';
 import MainLayout from '../../Layouts/MainLayout'
-import DataTableBase from '../../tables/DataTableBase'
 
 function Roads() {
     const columns = [
@@ -31,14 +29,9 @@ function Roads() {
 
     const { data } = useRoadsQuery();
 
-    const object = {one: '1', two: '2', three: '3'}
-    objectFilter(object, ['two']);
-    // console.log(result);
-
     return (
         <>
             <MainLayout component='Roads'>
-                <DataTableBase columns={columns} data={data}/>
             </MainLayout>
         </>
     )

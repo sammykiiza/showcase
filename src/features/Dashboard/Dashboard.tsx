@@ -1,5 +1,4 @@
 import MainLayout from '../Layouts/MainLayout'
-import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
 
@@ -51,7 +50,6 @@ const data = [
   return (
     <>
       <MainLayout component='Dashboard view'>
-        <DataTableBase columns={columns} data={data} />
         <span>Dashboard</span>
       </MainLayout>
     </>

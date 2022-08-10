@@ -1,6 +1,5 @@
 import React from 'react'
 import MainLayout from '../../Layouts/MainLayout';
-import DataTableBase from '../../tables/DataTableBase';
 
 function RoadTypes() {
   const columns = [
@@ -48,7 +47,6 @@ const data = [
   return (
     <div>
       <MainLayout component='Road Types'>
-        <DataTableBase columns={columns} data={data}/>
       </MainLayout>
     </div>
   )
