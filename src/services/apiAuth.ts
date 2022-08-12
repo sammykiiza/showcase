@@ -19,10 +19,6 @@ export interface LoginRequest {
   password: string
 }
 
-interface RoadResponse {
-  [key: string] : any
-}
-
 const council = localStorage.getItem('council');
 
 export const apiAuth = createApi({
@@ -47,7 +43,7 @@ export const apiAuth = createApi({
     }),
 
     // road network endpoints
-    roads: builder.query<RoadResponse[]|undefined, void>({
+    roads: builder.query<any, void>({
       query: () => {
           const locationId = splitString(council, 0);
           return {
