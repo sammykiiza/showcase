@@ -19,13 +19,12 @@ function MainLayout(props: Props) {
         <NavBar />
       </div>
       <FilterMenu3 />
-      <div className='grid md:grid-cols-11 2xl:grid-cols-15'>
-        <div style={{ zIndex: 1 }}>
+      <div className='flex'>
+        <div style={{ zIndex: 1 }} className="flex-none">
           <SideMenuMobile />
           <SideMenu />
         </div>
-        {/* md:ml-28 xl:ml-8 2xl:-ml-[1%] */}
-        <div className='-translate-y-[93vh] md:translate-y-0 ease-linear duration-400 col-start-1 lg:col-start-3 2xl:col-start-3 col-span-full mt-1'>
+        <div className='md:translate-y-0 ease-linear duration-400 mt-1 basis-full ml-2'>
           <div className='grid'>
             <div className='flex justify-between'>
               <div>
