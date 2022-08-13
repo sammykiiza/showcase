@@ -41,11 +41,9 @@ function NavBar() {
               </div>
               <div className="flex-1">
                 <div className="flex justify-between">
-                  <h3 className='uppercase font-semibold text-white p-2'>ITTRAMS</h3>
-                  <div className="hidden md:block">
-                    <div className="flex">
-                      <InnerNavBar />
-                    </div>
+                  {/* <h3 className='uppercase font-semibold text-white p-2'>ITTRAMS</h3> */}
+                  <div className="hidden md:block md:flex -ml-2">
+                  <InnerNavBar />
                   </div>
                 </div>
               </div>

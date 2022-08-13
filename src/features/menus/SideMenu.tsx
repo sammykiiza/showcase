@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 function SideMenu() {
     return (
         <div className="w-60 h-[100vh] md:bg-black md:translate-x-0 -translate-x-full ease-in-out duration-700" id="sidenavExample">
+            <h3 className='uppercase font-semibold text-white p-2 ml-4'>ITTRAMS</h3>
             <ul className="relative">
             <li className="relative" id="sidenavEx8">
                     <Link to='/map' className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-white text-ellipsis whitespace-nowrap hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">

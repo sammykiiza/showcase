@@ -15,17 +15,18 @@ type Props = {
 function MainLayout(props: Props) {
   return (
     <div className='bg-slate-100 h-[100vh] w-screen'>
-      <div>
-        <NavBar />
-      </div>
       <FilterMenu3 />
       <div className='flex'>
-        <div style={{ zIndex: 1 }} className="flex-none">
+        <div style={{ zIndex: 1 }}>
           <SideMenuMobile />
           <SideMenu />
         </div>
-        <div className='md:translate-y-0 ease-linear duration-400 mt-1 basis-full ml-2'>
-          <div className='grid'>
+        <div className='md:translate-y-0 ease-linear duration-400 basis-full'>
+          <div>
+            <NavBar />
+          </div>
+
+          <div className='grid mt-1 ml-2'>
             <div className='flex justify-between'>
               <div>
                 <PageTitle title={props.component} />
