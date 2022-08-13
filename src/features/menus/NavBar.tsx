@@ -26,7 +26,7 @@ function NavBar() {
     <Disclosure as="nav" className={"bg-black w-full w-screen"}>
       {({ open }) => (
         <>
-          <div className="w-full mx-full px-2">
+          <div className="mx-full">
             <div className="relative flex items-center justify-between h-15 lg:h-10">
               <div className="absolute inset-y-0 left-20 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -42,7 +42,7 @@ function NavBar() {
               <div className="flex-1">
                 <div className="flex justify-between">
                   {/* <h3 className='uppercase font-semibold text-white p-2'>ITTRAMS</h3> */}
-                  <div className="hidden md:block md:flex -ml-2">
+                  <div className="hidden md:block md:flex">
                   <InnerNavBar />
                   </div>
                 </div>
@@ -59,7 +59,7 @@ function NavBar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-black flex text-sm rounded-full">
+                    <Menu.Button className="bg-black flex text-sm rounded-full mr-2">
                       <span className="sr-only">Open user menu</span>
                       {/* <img
                         className="h-6 w-6 rounded-full"
