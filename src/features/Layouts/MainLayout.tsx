@@ -1,7 +1,6 @@
 import React from 'react'
 import ChangeLocationButton from '../location/ChangeLocationButton'
-// import FilterMenu2 from '../menus/fiterMenu/FilterMenu2'
-import FilterMenu3 from '../menus/fiterMenu/FilterMenu3'
+import FilterMenu from '../menus/fiterMenu/FilterMenu'
 import NavBar from '../menus/NavBar'
 import SideMenu from '../menus/SideMenu'
 import SideMenuMobile from '../menus/SideMenuMobile/SideMenuMobile'
@@ -16,7 +15,7 @@ type Props = {
 function MainLayout(props: Props) {
   return (
     <div className='bg-slate-100 h-[100vh] w-screen'>
-      <FilterMenu3 />
+      <FilterMenu />
       <div className='flex'>
         <div style={{ zIndex: 1 }}>
           <SideMenuMobile />
