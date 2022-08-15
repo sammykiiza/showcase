@@ -5,7 +5,7 @@ import './styles.css';
 
 function Map() {
   return (
-      <MainLayout component='Map'>
+      <MainLayout component='Map' section='Map'>
           <MapContainer
             center={[-15.4245, 28.3197]}  
             zoom={13}

@@ -9,6 +9,7 @@ import PageTitle from './titleComponents/PageTitle'
 
 type Props = {
   children?: React.ReactNode,
+  section?:string,
   component: string
 }
 
@@ -29,7 +30,7 @@ function MainLayout(props: Props) {
           <div className='grid mt-1 ml-2'>
             <div className='flex justify-between'>
               <div>
-                <PageTitle title={props.component} />
+                <PageTitle section={props.section} />
               </div>
               <div className='inline-block -mt-1 md:mb-4'>
                 <ChangeLocationButton />

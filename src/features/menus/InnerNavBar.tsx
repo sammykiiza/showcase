@@ -1,6 +1,7 @@
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 function InnerNavBar() {
     return (
@@ -26,7 +27,7 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/analytics">Roads</a>
+                                    <Link className="hover:text-slate-300" to="/road-network/roads">Roads</Link>
                                     <a className="hover:text-slate-300" href="/engagement">Regions</a>
                                     <a className="hover:text-slate-300" href="/security">Locations</a>
                                     <a className="hover:text-slate-300" href="/integrations">Road Types</a>

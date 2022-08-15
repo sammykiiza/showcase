@@ -1,13 +1,13 @@
 import React from 'react'
 
-interface TitleProps {
- title: string   
+interface SectionProps {
+ section?: string   
 }
 
-function PageTitle(props:TitleProps) {
+function PageTitle(props:SectionProps) {
   return (
     <span className='text-lg text-medium'>
-        {props.title}
+        {props.section}
     </span>
   )
 }
