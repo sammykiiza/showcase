@@ -5,7 +5,7 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 function Roads() {
     const columns: GridColDef[] = [
-        { field: 'dateCreated', headerName: 'Date Uploaded', width: 200 },
+        { field: 'dateCreated', headerName: 'Date Uploaded', width: 200, type: 'dateTime'},
         { field: 'roadCode', headerName: 'Road Number', width: 150 },
         { field: 'roadName', headerName: 'Road name', width: 200 },
         { field: 'roadTypeId', headerName: 'Road Type', width: 200 },

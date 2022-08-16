@@ -2,7 +2,7 @@ import React from 'react'
 import ChangeLocationButton from '../location/ChangeLocationButton'
 import FilterMenu from '../menus/fiterMenu/FilterMenu'
 import NavBar from '../menus/NavBar'
-import SideMenu from '../menus/SideMenu'
+import SideMenu from '../menus/SideMenu/SideMenu'
 import SideMenuMobile from '../menus/SideMenuMobile/SideMenuMobile'
 import PageTitle from './titleComponents/PageTitle'
 
