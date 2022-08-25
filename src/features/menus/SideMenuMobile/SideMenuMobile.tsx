@@ -71,7 +71,7 @@ export default function SideMenuMobile() {
         )}
       </AnimatePresence>
       <div className="btn-container">
-        <button className=".button" onClick={() => cycleOpen()}>{!open ? (<MenuAlt1Icon className='w-6 h-6 mr-5' />) : (<XIcon className='w-6 h-6 mr-5 text-white' />)}</button>
+        <button className=".button" onClick={() => cycleOpen()}>{!open ? (<MenuAlt1Icon className='w-6 h-6 mr-5 text-white' />) : (<XIcon className='w-6 h-6 mr-5 text-white' />)}</button>
       </div>
     </main>
   );

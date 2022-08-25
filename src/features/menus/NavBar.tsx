@@ -23,7 +23,7 @@ function classNames(...classes: string[]) {
 
 function NavBar() {
   return (
-    <Disclosure as="nav" className={"bg-black w-full w-screen"}>
+    <Disclosure as="nav" className={"bg-black w-screen md:w-full"}>
       {({ open }) => (
         <>
           <div className="mx-full">

@@ -23,7 +23,8 @@ function OtherPagesLayout(props: Props) {
                     <SideMenuMobile />
                     <SideMenu />
                 </div>
-                <div className='md:translate-y-0 ease-linear duration-400 basis-full'>
+                {/* md:translate-y-0 ease-linear duration-400 */}
+                <div className='-translate-x-60 md:translate-x-0 ease-linear duration-400 basis-full'>
                     <div>
                         <NavBar />
                     </div>
@@ -37,10 +38,10 @@ function OtherPagesLayout(props: Props) {
                                 <ChangeLocationButton />
                             </div>
                         </div>
-                        <div className='border border-slate-300 md:rounded-md h-auto w-full md:w-[99%] mr-3 ml-1 justify-self-center mb-2'>
+                        <div className='border border-slate-300 md:rounded-md h-auto w-full mr-3 ml-1 justify-self-center mb-2'>
                             <Search title={props.searchButton} />
                         </div>
-                        <div className='border border-slate-300 md:rounded h-auto w-full md:w-[99%] mr-3 ml-1 justify-self-center'>
+                        <div className='border border-slate-300 md:rounded h-auto w-full mr-3 ml-1 justify-self-center'>
                             {props.children}
                         </div>
                     </div>

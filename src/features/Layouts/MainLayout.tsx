@@ -21,7 +21,7 @@ function MainLayout(props: Props) {
           <SideMenuMobile />
           <SideMenu />
         </div>
-        <div className='md:translate-y-0 ease-linear duration-400 basis-full'>
+        <div className='-translate-x-60 md:translate-x-0 ease-linear duration-400 basis-full'>
           <div>
             <NavBar />
           </div>
