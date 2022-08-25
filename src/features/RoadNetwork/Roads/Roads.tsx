@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRoadsQuery } from '../../../services/apiAuth';
-import MainLayout from '../../Layouts/MainLayout';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import Search from '../../miscalleneous/Search';
+import OtherPagesLayout from '../../Layouts/OtherPagesLayout';
 
 function Roads() {
     const columns: GridColDef[] = [
@@ -20,7 +21,7 @@ function Roads() {
 
     return (
         <>
-            <MainLayout component='Roads' section='Road Network'>
+            <OtherPagesLayout component='Roads' section='Road Network' searchButton='Road'>
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
                         rows={rows}
@@ -29,7 +30,7 @@ function Roads() {
                         rowsPerPageOptions={[5]}
                     />
                 </div>
-            </MainLayout>
+            </OtherPagesLayout>
         </>
     )
 }

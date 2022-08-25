@@ -22,9 +22,9 @@ function Map() {
         scrollWheelZoom={true}
         style={{ height: '77vh', width: '100%', zIndex: 0 }}
       >
-        <Geo
+        {/* <Geo
         data={geoData}
-        />
+        /> */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

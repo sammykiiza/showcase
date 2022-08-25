@@ -43,7 +43,7 @@ function NavBar() {
                 <div className="flex justify-between">
                   {/* <h3 className='uppercase font-semibold text-white p-2'>ITTRAMS</h3> */}
                   <div className="hidden md:block md:flex">
-                  <InnerNavBar />
+                    {(window.location.href.indexOf("map") > -1)? (<></>) : (<InnerNavBar />)}   
                   </div>
                 </div>
               </div>
