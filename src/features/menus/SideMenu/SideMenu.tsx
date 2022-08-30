@@ -22,7 +22,7 @@ function SideMenu() {
                         <span>Road Network</span>
                     </Link>
                 </li>
-                <li className={((window.location.href.indexOf("r/oad-inventory/") > -1)? 'bg-gray-100 border-r-2 border-slate-600': '') + " hover:border-r-2 hover:border-slate-600 relative"} id="sidenavEx2">
+                <li className={((window.location.href.indexOf("/road-inventory/") > -1)? 'bg-gray-100 border-r-2 border-slate-600': '') + " hover:border-r-2 hover:border-slate-600 relative"} id="sidenavEx2">
                     <Link to='/road-inventory/inventory-data' className={((window.location.href.indexOf("road-inventory") > -1)? "text-gray-900" : "") + " flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-white text-ellipsis whitespace-nowrap hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer"} data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" className="w-4 h-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                         <path fill='currentColor' d="M173.7 128L216 20.3C220.8 8.053 232.7 0 245.8 0H266.2C279.3 0 291.2 8.053 295.1 20.3L338.3 128H173.7zM363.4 192L401.1 288H110.9L148.6 192H363.4zM48 448L85.71 352H426.3L464 448H480C497.7 448 512 462.3 512 480C512 497.7 497.7 512 480 512H32C14.33 512 0 497.7 0 480C0 462.3 14.33 448 32 448H48z"/>
