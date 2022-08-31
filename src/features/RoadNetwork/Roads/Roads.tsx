@@ -2,20 +2,93 @@ import React from 'react';
 import { useRoadsQuery } from '../../../services/apiAuth';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import OtherPagesLayout from '../../Layouts/OtherPagesLayout';
+import { DateTime } from "luxon";
 
 function Roads() {
     const columns: GridColDef[] = [
-        { field: 'dateCreated', headerName: 'Date Uploaded', flex: 1, minWidth: 150, type: 'dateTime', headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center'},
-        { field: 'roadCode', headerName: 'Road Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadName', headerName: 'Road name', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadTypeId', headerName: 'Road Type', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadSectionNumber', headerName: 'Segment Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'fromChainage', headerName: 'Start (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'toChainage', headerName: 'End (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'conditionIndex', headerName: 'Road Condition Index', flex: 1, minWidth: 170, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        {
+            field: 'dateCreated',
+            headerName: 'Date Uploaded',
+            flex: 1,
+            minWidth: 150,
+            type: 'dateTime',
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center',
+            valueFormatter: params => DateTime.fromISO(params?.value).toLocaleString(DateTime.DATETIME_MED),
+        },
+
+        {
+            field: 'roadCode',
+            headerName: 'Road Number',
+            flex: 1,
+            minWidth: 150,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'roadName',
+            headerName: 'Road name',
+            flex: 1, minWidth: 100,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'roadTypeId',
+            headerName: 'Road Type',
+            flex: 1,
+            minWidth: 100,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'roadSectionNumber',
+            headerName: 'Segment Number',
+            flex: 1,
+            minWidth: 150,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'fromChainage',
+            headerName: 'Start (KM)',
+            flex: 1,
+            minWidth: 100,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'toChainage',
+            headerName: 'End (KM)',
+            flex: 1,
+            minWidth: 100,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
+
+        {
+            field: 'conditionIndex',
+            headerName: 'Road Condition Index',
+            flex: 1,
+            minWidth: 170,
+            headerClassName: 'bg-[#2271B1] text-white',
+            headerAlign: 'center',
+            align: 'center'
+        },
     ];
 
-    const { data:rows = [] } = useRoadsQuery();
+    const { data: rows = [] } = useRoadsQuery();
 
     return (
         <>
@@ -24,9 +97,9 @@ function Roads() {
                     <DataGrid
                         sx={{
                             '& .MuiDataGrid-cell:hover': {
-                              color: '#2271B1',
+                                color: '#2271B1',
                             },
-                          }}
+                        }}
                         rows={rows}
                         columns={columns}
                         pageSize={10}
