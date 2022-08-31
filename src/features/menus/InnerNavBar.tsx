@@ -9,7 +9,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/road-network/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] px-3 py-2 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/road-network/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] px-3 py-4 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Road Network</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -40,7 +40,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/road-inventory/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/road-inventory/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-4 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Road Inventory</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -69,7 +69,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/planning/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/planning/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-6 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Planning</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -99,7 +99,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/contract-management/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-4 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/contract-management/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-4 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Contract Management</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -127,7 +127,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/finance/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-4 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/finance/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-6 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Finance</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -155,7 +155,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/reporting/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/reporting/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-6 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>Reporting</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
@@ -184,7 +184,7 @@ function InnerNavBar() {
             <Popover>
                 {({ open }) => (
                     <>
-                        <Popover.Button className={((window.location.href.indexOf("/user-management/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-2 lg:py-2.5 font-medium`}>
+                        <Popover.Button className={((window.location.href.indexOf("/user-management/") > -1) ? 'bg-[#2271B1]' : '') + ` text-white text-xs lg:text-sm flex items-center text-white hover:bg-[#2271B1] hover:text-white px-3 py-4 lg:py-2.5 font-medium h-15 lg:h-10`}>
                             <span>User Management</span>
                             <ChevronRightIcon
                                 className={`rotate-90 w-3 h-3 ml-2`}
