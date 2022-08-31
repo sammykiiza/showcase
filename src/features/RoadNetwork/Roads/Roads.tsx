@@ -5,14 +5,14 @@ import OtherPagesLayout from '../../Layouts/OtherPagesLayout';
 
 function Roads() {
     const columns: GridColDef[] = [
-        { field: 'dateCreated', headerName: 'Date Uploaded', width: 300, type: 'dateTime', headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center'},
-        { field: 'roadCode', headerName: 'Road Number', width: 250, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadName', headerName: 'Road name', width: 250, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadTypeId', headerName: 'Road Type', width: 250, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'roadSectionNumber', headerName: 'Segment Number', width: 250, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'fromChainage', headerName: 'Start (KM)', width: 90, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'toChainage', headerName: 'End (KM)', width: 90, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
-        { field: 'conditionIndex', headerName: 'Road Condition Index', width: 190, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'dateCreated', headerName: 'Date Uploaded', flex: 1, minWidth: 150, type: 'dateTime', headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center'},
+        { field: 'roadCode', headerName: 'Road Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadName', headerName: 'Road name', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadTypeId', headerName: 'Road Type', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadSectionNumber', headerName: 'Segment Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'fromChainage', headerName: 'Start (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'toChainage', headerName: 'End (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'conditionIndex', headerName: 'Road Condition Index', flex: 1, minWidth: 170, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
     ];
 
     const { data:rows = [] } = useRoadsQuery();
