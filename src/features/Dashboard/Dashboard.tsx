@@ -1,63 +1,57 @@
-import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
-import FilterMenu from '../menus/fiterMenu/FilterMenu';
-import NavBar from '../menus/NavBar'
-import DataTableBase from '../tables/DataTableBase';
 
 function Dashboard() {
 
-const columns = [
-  {
-      name: 'Date Uploaded',
-      sortable: true,
-  },
-  {
-      name: 'Road Number',
-      sortable: true
-  },
-  {
-    name: 'Road Name',
-    sortable: true
-},
-{
-  name: 'Road Type',
-  sortable: true
-},
-{
-  name: 'Segment Number',
-  sortable: true
-},
-{
-  name: 'Start(KM)',
-  sortable: true
-},
-{
-  name: 'End(KM)',
-  sortable: true
-},
-{
-  name: 'Road Condition Index',
-  sortable: true
-},
+  const columns = [
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
+    {
+        name: 'Date Uploaded',
+    },
 ];
 
 const data = [
-  {
-      title: 'Beetlejuice',
-  },
-  {
-      title: 'Ghostbusters',
-  },
+    {   
+        value: 'value1',
+        cell: 'test'
+    },
+    {
+        value: 'value2',
+        cell: 'test'
+    },
+    {
+        value: 'value3',
+        cell: 'test'
+    },
+    {
+        value: 'value4',
+        cell: 'test'
+    }
 ]
-
   return (
     <>
-    <NavBar title="Dashboard"/>
-    <MainLayout>
-      <FilterMenu />
-      <DataTableBase columns = {columns} data = {data}/>        
+      <MainLayout component='Dashboard view'>
         <span>Dashboard</span>
-    </MainLayout>
+      </MainLayout>
     </>
   )
 }

@@ -1,63 +1,41 @@
-import React from 'react'
-import MainLayout from '../../Layouts/MainLayout'
-import FilterMenu from '../../menus/fiterMenu/FilterMenu'
-import NavBar from '../../menus/NavBar'
-import DataTableBase from '../../tables/DataTableBase'
+import React from 'react';
+import { useRoadsQuery } from '../../../services/apiAuth';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import OtherPagesLayout from '../../Layouts/OtherPagesLayout';
 
 function Roads() {
-const columns = [
-    {
-        name: 'Date Uploaded',
-        sortable: true,
-    },
-    {
-        name: 'Road Number',
-        sortable: true
-    },
-    {
-        name: 'Road Name',
-        sortable: true
-    },
-    {
-        name: 'Road Type',
-        sortable: true
-    },
-    {
-        name: 'Segment Number',
-        sortable: true
-    },
-    {
-        name: 'Start(KM)',
-        sortable: true
-    },
-    {
-        name: 'End(KM)',
-        sortable: true
-    },
-    {
-        name: 'Road Condition Index',
-        sortable: true
-    },
-];
+    const columns: GridColDef[] = [
+        { field: 'dateCreated', headerName: 'Date Uploaded', flex: 1, minWidth: 150, type: 'dateTime', headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center'},
+        { field: 'roadCode', headerName: 'Road Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadName', headerName: 'Road name', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadTypeId', headerName: 'Road Type', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'roadSectionNumber', headerName: 'Segment Number', flex: 1, minWidth: 150, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'fromChainage', headerName: 'Start (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'toChainage', headerName: 'End (KM)', flex: 1, minWidth: 100, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+        { field: 'conditionIndex', headerName: 'Road Condition Index', flex: 1, minWidth: 170, headerClassName: 'bg-[#2271B1] text-white', headerAlign: 'center', align: 'center' },
+    ];
 
-const data = [
-    {
-        title: 'Beetlejuice',
-    },
-    {
-        title: 'Ghostbusters',
-    },
-]
-  return (
-    <>
-    <NavBar title="Roads"/>
-    <MainLayout>
-      <FilterMenu />
-      <DataTableBase columns = {columns} data = {data}/>        
-        <span>Dashboard</span>
-    </MainLayout>
-    </>
-  )
+    const { data:rows = [] } = useRoadsQuery();
+
+    return (
+        <>
+            <OtherPagesLayout component='Roads' section='Road Network' searchButton='Road'>
+                <div style={{ height: "74vh", width: '100%' }}>
+                    <DataGrid
+                        sx={{
+                            '& .MuiDataGrid-cell:hover': {
+                              color: '#2271B1',
+                            },
+                          }}
+                        rows={rows}
+                        columns={columns}
+                        pageSize={10}
+                        rowsPerPageOptions={[5]}
+                    />
+                </div>
+            </OtherPagesLayout>
+        </>
+    )
 }
 
 export default Roads
