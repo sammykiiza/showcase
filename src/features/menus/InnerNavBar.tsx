@@ -28,10 +28,11 @@ function InnerNavBar() {
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
                                     <Link className="hover:text-slate-300" to="/road-network/roads">Roads</Link>
-                                    <a className="hover:text-slate-300" href="/road-network/regions">Regions</a>
-                                    <a className="hover:text-slate-300" href="/road-network/locations">Locations</a>
-                                    <a className="hover:text-slate-300" href="/road-network/types">Road Types</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/road-network/regions">Regions</Link>
+                                    <Link className="hover:text-slate-300" to="/road-network/locations">Locations</Link>
+                                    <Link className="hover:text-slate-300" to="/road-network/types">Road Types</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -58,9 +59,10 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/road-inventory/inventory-data">Inventory Data</a>
-                                    <a className="hover:text-slate-300" href="/road-inventory/road-and-section-data">Road and Section Data</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/road-inventory/inventory-data">Inventory Data</Link>
+                                    <Link className="hover:text-slate-300" to="/road-inventory/road-and-section-data">Road and Section Data</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -87,10 +89,11 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/road-condition/functional-assesment">Functional Assesment</a>
-                                    <a className="hover:text-slate-300" href="/road-condition/material-information">Material Information</a>
-                                    <a className="hover:text-slate-300" href="/road-condition/surface-distress">Surface Distress</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/road-condition/functional-assesment">Functional Assesment</Link>
+                                    <Link className="hover:text-slate-300" to="/road-condition/material-information">Material Information</Link>
+                                    <Link className="hover:text-slate-300" to="/road-condition/surface-distress">Surface Distress</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -117,8 +120,9 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/planning/planning">Planning</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/planning/planning">Planning</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -145,8 +149,9 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/finance/projects">Projects/Programs</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/finance/projects">Projects/Programs</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -173,9 +178,10 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/contract-management/contracts">Contracts</a>
-                                    <a className="hover:text-slate-300" href="/contract-management/contractors">Contractors</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/contract-management/contracts">Contracts</Link>
+                                    <Link className="hover:text-slate-300" to="/contract-management/contractors">Contractors</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
@@ -202,9 +208,10 @@ function InnerNavBar() {
                         >
                             <Popover.Panel className="absolute z-10 bg-black text-white text-sm w-36 p-2">
                                 <div className="grid grid-cols-1 gap-y-1">
-                                    <a className="hover:text-slate-300" href="/user-management/users">Users</a>
-                                    <a className="hover:text-slate-300" href="/user-management/roles">Roles</a>
-                                </div></Popover.Panel>
+                                    <Link className="hover:text-slate-300" to="/user-management/users">Users</Link>
+                                    <Link className="hover:text-slate-300" to="/user-management/roles">Roles</Link>
+                                </div>
+                            </Popover.Panel>
                         </Transition>
                     </>
                 )}
