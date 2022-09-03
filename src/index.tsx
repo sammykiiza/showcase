@@ -15,6 +15,7 @@ import Locations from './features/RoadNetwork/Locations/Locations';
 import Regions from './features/RoadNetwork/Regions/Regions';
 import Roads from './features/RoadNetwork/Roads/Roads';
 import RoadTypes from './features/RoadNetwork/RoadTypes/RoadTypes';
+import RoadNetwork from './features/RoadNetwork/RoadNetwork';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -24,20 +25,22 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Login />}/>
-          <Route path="/" element={<App />}/>
-          <Route path="map" element={<Map/>}/>
-          <Route path="contract-management" element={<Contracts />}/>
-          <Route path='dashboard' element={<Dashboard />}/>
+          <Route element={<App />}>
+            
+            <Route index element={<Login />} />
+            <Route path="map" element={<Map />} />
+            <Route path="contract-management" element={<Contracts />} />
+            <Route path='dashboard' element={<Dashboard />} />
 
-          {/* road network routes */}
-          <Route path='road-network'>
-            <Route path='locations' element={<Locations />}/>
-            <Route path='regions' element={<Regions/>}/>
-            <Route path='roads' element={<Roads/>}/>
-            <Route path='road-types' element={<RoadTypes/>}/>
+            {/* road network routes */}
+            <Route element={<RoadNetwork />} path='road-network'>
+              <Route path='locations' element={<Locations />} />
+              <Route path='regions' element={<Regions />} />
+              <Route path='roads' element={<Roads />} />
+              <Route path='road-types' element={<RoadTypes />} />
+            </Route>
+
           </Route>
-
         </Routes>
       </BrowserRouter>
     </Provider>
