@@ -1,8 +1,8 @@
-import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import dropDownReducer from '../features/menus/dropDownSlice';
-import filterMenuReducer from '../features/menus/fiterMenu/filterMenuSlice';
-import authSliceReducer from '../features/auth/login/authSlice';
+import dropDownReducer from '../features/Menus/dropDownSlice';
+import filterMenuReducer from '../features/Menus/FiterMenu/filterMenuSlice';
+import authSliceReducer from '../features/Auth/Login/AuthSlice';
 import { apiAuth } from '../services/apiAuth';
 import { apiFilterMenu } from '../services/apiFilterMenu';
 import { listenerMiddleware } from './middleware/listenerMiddleware';
