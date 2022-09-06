@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import React, { Fragment, useEffect } from 'react'
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch } from '../../../App/hooks';
 import { checkFilterLocalStorage } from '../../../Helpers/Functions/checkFilterLocalStorage';
-import { useFiscalYearsQuery, apiFilterMenu } from '../../../services/apiFilterMenu';
+import { useFiscalYearsQuery, apiFilterMenu } from '../../../Services/apiFilterMenu';
 import { setFiscalYear, setRegion, setCouncil } from './filterMenuSlice';
 
 function FilterMenu() {

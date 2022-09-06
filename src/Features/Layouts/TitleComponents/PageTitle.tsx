@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionProps } from '../../../Types/sectionProps'
+import { SectionProps } from '../../../Types/LayoutProps/sectionProps'
 
 function PageTitle(props:SectionProps) {
   return (

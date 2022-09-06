@@ -2,7 +2,7 @@ import React from 'react'
 import MainLayout from '../Layouts/MainLayout'
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON as Geo } from 'react-leaflet'
 import './styles.css';
-import { useGeoJsonQuery } from '../../services/apiAuth';
+import { useGeoJsonQuery } from '../../Services/apiAuth';
 
 function Map() {
   const { data = [] } = useGeoJsonQuery(undefined, {

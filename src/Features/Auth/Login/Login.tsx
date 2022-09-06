@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { RootState } from '../../../app/store';
-import { useLoginMutation } from '../../../services/apiAuth';
+import { useAppDispatch, useAppSelector } from '../../../App/hooks';
+import { RootState } from '../../../App/store';
+import { useLoginMutation } from '../../../Services/apiAuth';
 import { LoginRequest } from '../../../Types/Models/Auth/loginRequest';
 import AuthLayout from '../Layouts/AuthLayout';
 import { setCredentials } from './AuthSlice';

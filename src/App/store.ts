@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import filterMenuReducer from '../features/Menus/FiterMenu/filterMenuSlice';
-import authSliceReducer from '../features/Auth/Login/AuthSlice';
-import { apiAuth } from '../services/apiAuth';
-import { apiFilterMenu } from '../services/apiFilterMenu';
+import counterReducer from '../Features/counter/counterSlice';
+import filterMenuReducer from '../Features/Menus/FiterMenu/filterMenuSlice';
+import authSliceReducer from '../Features/Auth/Login/AuthSlice';
+import { apiAuth } from '../Services/apiAuth';
+import { apiFilterMenu } from '../Services/apiFilterMenu';
 import { listenerMiddleware } from './middleware/listenerMiddleware';
 
 export const store = configureStore({
