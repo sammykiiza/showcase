@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { apiURL } from '../Helpers/variables';
+import { apiURL } from '../Helpers';
 
 export const apiFilterMenu = createApi({
     reducerPath: 'apiFilterMenu',

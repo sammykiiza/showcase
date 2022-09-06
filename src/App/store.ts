@@ -4,7 +4,7 @@ import filterMenuReducer from '../Features/Menus/FiterMenu/filterMenuSlice';
 import authSliceReducer from '../Features/Auth/Login/AuthSlice';
 import { apiAuth } from '../Services/apiAuth';
 import { apiFilterMenu } from '../Services/apiFilterMenu';
-import { listenerMiddleware } from './middleware/listenerMiddleware';
+import { listenerMiddleware } from './Middleware/listenerMiddleware';
 
 export const store = configureStore({
   reducer: {

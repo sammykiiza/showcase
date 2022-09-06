@@ -1,13 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react'
 import React, { Fragment, useEffect } from 'react'
 import { useAppDispatch } from '../../../App/hooks';
-import { checkFilterLocalStorage } from '../../../Helpers/Functions/checkFilterLocalStorage';
-import { useFiscalYearsQuery, apiFilterMenu } from '../../../Services/apiFilterMenu';
+import { checkFilterLocalStorage } from '../../../Helpers';
+import { apiFilterMenu } from '../../../Services';
 import { setFiscalYear, setRegion, setCouncil } from './filterMenuSlice';
 
 function FilterMenu() {
-
-    const fiscalYears = useFiscalYearsQuery();
+    const fiscalYears = apiFilterMenu.useFiscalYearsQuery();
 
     const [triggerRegions, regions] = apiFilterMenu.useLazyRegionsQuery(undefined);
 

@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from '../App/store'
-import { splitString } from '../Helpers/Functions/splitString'
-import { apiURL } from '../Helpers/variables'
+import { apiURL, splitString } from '../Helpers'
 import { LoginRequest } from '../Types/Models/Auth/loginRequest'
 import { UserResponse } from '../Types/Models/Auth/userResponse'
 import { Road } from '../Types/Models/Roads/Road'

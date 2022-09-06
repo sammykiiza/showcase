@@ -1,12 +1,9 @@
 import React from 'react'
+import { PageTitle } from '.'
 import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
-import ChangeLocationButton from '../Location/ChangeLocationButton'
-import FilterMenu from '../Menus/FiterMenu/FilterMenu'
-import NavBar from '../Menus/NavBar'
-import SideMenu from '../Menus/SideMenu/SideMenu'
-import SideMenuMobile from '../Menus/SideMenuMobile/SideMenuMobile'
-import Search from '../Miscalleneous/Search'
-import PageTitle from './TitleComponents/PageTitle'
+import { ChangeLocationButton } from '../Location'
+import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
+import { Search } from '../Miscalleneous'
 
 interface Props extends MainLayoutProps {
     searchButton: string

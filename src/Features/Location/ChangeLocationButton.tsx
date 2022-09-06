@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { checkFilterLocalStorage } from '../../Helpers/Functions/checkFilterLocalStorage';
-import { splitString } from '../../Helpers/Functions/splitString';
+import { checkFilterLocalStorage, splitString } from '../../Helpers';
 
 function ChangeLocationButton() {
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../App/hooks';
 import { RootState } from '../../../App/store';
-import { useLoginMutation } from '../../../Services/apiAuth';
+import { apiAuth } from '../../../Services/apiAuth';
 import { LoginRequest } from '../../../Types/Models/Auth/loginRequest';
 import AuthLayout from '../Layouts/AuthLayout';
 import { setCredentials } from './AuthSlice';
@@ -14,7 +14,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState("");
 
-    const [login, { isLoading, error }] = useLoginMutation();
+    const [login, { isLoading, error }] = apiAuth.useLoginMutation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 

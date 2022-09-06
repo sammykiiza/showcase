@@ -7,14 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Contracts from './Features/ContractManagement/Contracts';
-import Map from './Features/Map/Map';
-import Login from './Features/Auth/Login/Login';
-import Locations from './Features/RoadNetwork/Locations/Locations';
-import Regions from './Features/RoadNetwork/Regions/Regions';
-import Roads from './Features/RoadNetwork/Roads/Roads';
-import RoadTypes from './Features/RoadNetwork/RoadTypes/RoadTypes';
-import RoadNetwork from './Features/RoadNetwork/RoadNetwork';
+import { Login } from './Features/Auth';
+import { Contracts } from './Features/ContractManagement';
+import { Locations, Regions, RoadNetwork, Roads, RoadTypes } from './Features/RoadNetwork';
+import {Map} from './Features/Map';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

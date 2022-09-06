@@ -1,8 +1,8 @@
 import React from 'react';
-import { useRoadsQuery } from '../../../Services/apiAuth';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import OtherPagesLayout from '../../Layouts/OtherPagesLayout';
 import { DateTime } from "luxon";
+import { OtherPagesLayout } from '../../Layouts';
+import { apiAuth } from '../../../Services';
 
 function Roads() {
     const columns: GridColDef[] = [
@@ -88,7 +88,7 @@ function Roads() {
         },
     ];
 
-    const { data: rows = [] } = useRoadsQuery();
+    const { data: rows = [] } = apiAuth.useRoadsQuery();
 
     return (
         <>
