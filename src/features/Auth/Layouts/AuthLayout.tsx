@@ -1,10 +1,7 @@
 import React from 'react'
+import { ChildrenProps } from '../../../Types/LayoutProps/childrenProps'
 
-type Props = {
-    children?: React.ReactNode
-}
-
-function AuthLayout(props:Props) {
+function AuthLayout(props:ChildrenProps) {
   return (
       <>
       <div className='h-screen bg-gradient-to-r from-indigo-700 to-blue-700'>

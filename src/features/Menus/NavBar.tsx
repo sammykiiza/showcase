@@ -2,14 +2,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import InnerNavBar from './InnerNavBar'
+import { NavigationProps } from '../../Types/MenuProps/NavBar/navigationProps'
 
-interface Navigation {
-  name: string,
-  href: string,
-  current: boolean
-}
 
-const navigation: Navigation[] = [
+const navigation: NavigationProps[] = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },

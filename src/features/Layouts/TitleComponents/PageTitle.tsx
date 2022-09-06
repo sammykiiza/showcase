@@ -1,8 +1,5 @@
 import React from 'react'
-
-interface SectionProps {
- section?: string   
-}
+import { SectionProps } from '../../../Types/sectionProps'
 
 function PageTitle(props:SectionProps) {
   return (

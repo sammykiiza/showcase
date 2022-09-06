@@ -1,13 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../../app/store'
-import { User } from '../../../services/apiAuth'
+import { AuthState } from '../../../Types/Models/Auth/authState'
+import { User } from '../../../Types/Models/Auth/user'
 
-interface AuthState {
-  user: User | null
-  accessToken: string | null
+const initialState: AuthState = {
+  user: null,
+  accessToken: null
 }
-
-const initialState: AuthState = { user:null, accessToken: null }
 
 const AuthSlice = createSlice({
   name: 'auth',

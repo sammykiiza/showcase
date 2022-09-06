@@ -1,4 +1,5 @@
 import React from 'react'
+import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
 import ChangeLocationButton from '../Location/ChangeLocationButton'
 import FilterMenu from '../Menus/FiterMenu/FilterMenu'
 import NavBar from '../Menus/NavBar'
@@ -7,10 +8,7 @@ import SideMenuMobile from '../Menus/SideMenuMobile/SideMenuMobile'
 import Search from '../Miscalleneous/Search'
 import PageTitle from './TitleComponents/PageTitle'
 
-type Props = {
-    children?: React.ReactNode,
-    section?: string,
-    component: string,
+interface Props extends MainLayoutProps {
     searchButton: string
 }
 

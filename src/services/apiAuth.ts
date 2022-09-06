@@ -2,23 +2,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from '../app/store'
 import { splitString } from '../Helpers/Functions/splitString'
 import { apiURL } from '../Helpers/variables'
-import { Road } from '../Models/Roads/Road'
-
-export interface User {
-  first_name: string
-  last_name: string
-  email: string
-}
-
-export interface UserResponse {
-  user: User
-  accessToken: string
-}
-
-export interface LoginRequest {
-  email: string
-  password: string
-}
+import { LoginRequest } from '../Types/Models/Auth/loginRequest'
+import { UserResponse } from '../Types/Models/Auth/userResponse'
+import { Road } from '../Types/Models/Roads/Road'
 
 const council = localStorage.getItem('council');
 
@@ -44,7 +30,7 @@ export const apiAuth = createApi({
     }),
 
     // road network endpoints
-    roads: builder.query<any, void>({
+    roads: builder.query<Road[], void>({
       query: () => {
         const locationId = splitString(council, 0);
         return {

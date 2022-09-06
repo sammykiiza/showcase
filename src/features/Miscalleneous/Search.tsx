@@ -1,7 +1,8 @@
 import React from 'react'
+import { ObjectType } from '../../Types/objectType'
 
 
-function Search(props: { [key: string]: string }) {
+function Search(props: ObjectType) {
     return (
         <div className='bg-white rounded-md'>
             <div>

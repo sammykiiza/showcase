@@ -1,4 +1,5 @@
 import React from 'react'
+import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
 import ChangeLocationButton from '../Location/ChangeLocationButton'
 import FilterMenu from '../Menus/FiterMenu/FilterMenu'
 import NavBar from '../Menus/NavBar'
@@ -6,13 +7,7 @@ import SideMenu from '../Menus/SideMenu/SideMenu'
 import SideMenuMobile from '../Menus/SideMenuMobile/SideMenuMobile'
 import PageTitle from './TitleComponents/PageTitle'
 
-type Props = {
-  children?: React.ReactNode,
-  section?:string,
-  component: string
-}
-
-function MainLayout(props: Props) {
+function MainLayout(props: MainLayoutProps) {
   return (
     <div className='bg-slate-100 h-[100vh] w-screen'>
       <FilterMenu />

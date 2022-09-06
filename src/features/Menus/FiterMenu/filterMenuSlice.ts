@@ -1,13 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { FilterMenuState } from "../../../Types/MenuProps/FilterMenu/filterMenuState";
 
-export interface filterMenuState{
-    fiscalYear: string,
-    region: string,
-    council: string,
-    empty: boolean
-}
-
-const initialState: filterMenuState = {
+const initialState: FilterMenuState = {
     fiscalYear: '',
     region: '',
     council: '',
@@ -18,16 +12,16 @@ export const filterMenuSlice = createSlice({
     name: 'filterMenu',
     initialState,
     reducers: {
-        setFiscalYear: (state: filterMenuState, action: PayloadAction<string>) => {
+        setFiscalYear: (state: FilterMenuState, action: PayloadAction<string>) => {
             state.fiscalYear = action.payload;
         },
-        setRegion: (state: filterMenuState, action: PayloadAction<string>) => {
+        setRegion: (state: FilterMenuState, action: PayloadAction<string>) => {
             state.region = action.payload;
         },
-        setCouncil: (state: filterMenuState, action: PayloadAction<string>) => {
+        setCouncil: (state: FilterMenuState, action: PayloadAction<string>) => {
             state.council = action.payload;
         },
-        setEmpty: (state: filterMenuState) => {
+        setEmpty: (state: FilterMenuState) => {
             state.empty? state.empty = false : state.empty = true;
         }
     }

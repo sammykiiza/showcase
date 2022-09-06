@@ -97,7 +97,7 @@ function Roads() {
                     <DataGrid
                         sx={{
                             '& .MuiDataGrid-cell:hover': {
-                                color: '#2271B1',
+                                color: '#000',
                             },
                         }}
                         rows={rows}

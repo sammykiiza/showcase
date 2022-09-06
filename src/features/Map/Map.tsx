@@ -13,7 +13,6 @@ function Map() {
 
   let geoData = data.map(({ geoJson }) => geoJson);
 
-  console.log(geoData);
   return (
     <MainLayout component='Map' section='Map'>
       <MapContainer
