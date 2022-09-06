@@ -8,9 +8,8 @@ import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contracts from './features/ContractManagement/Contracts';
-import Dashboard from './features/Dashboard/Dashboard';
-import Map from './features/map/Map';
-import Login from './features/auth/login/Login';
+import Map from './features/Map/Map';
+import Login from './features/Auth/Login/Login';
 import Locations from './features/RoadNetwork/Locations/Locations';
 import Regions from './features/RoadNetwork/Regions/Regions';
 import Roads from './features/RoadNetwork/Roads/Roads';
@@ -30,7 +29,6 @@ root.render(
             <Route index element={<Login />} />
             <Route path="map" element={<Map />} />
             <Route path="contract-management" element={<Contracts />} />
-            <Route path='dashboard' element={<Dashboard />} />
 
             {/* road network routes */}
             <Route element={<RoadNetwork />} path='road-network'>

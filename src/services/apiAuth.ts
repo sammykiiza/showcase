@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from '../app/store'
-import { splitString } from '../helpers/functions/splitString'
-import { apiURL } from '../helpers/variables'
-import { Road } from '../models/Roads/Road'
+import { splitString } from '../Helpers/Functions/splitString'
+import { apiURL } from '../Helpers/variables'
+import { Road } from '../Models/Roads/Road'
 
 export interface User {
   first_name: string

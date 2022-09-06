@@ -1,11 +1,11 @@
 import React from 'react'
-import ChangeLocationButton from '../location/ChangeLocationButton'
-import FilterMenu from '../menus/fiterMenu/FilterMenu'
-import NavBar from '../menus/NavBar'
-import SideMenu from '../menus/SideMenu/SideMenu'
-import SideMenuMobile from '../menus/SideMenuMobile/SideMenuMobile'
-import Search from '../miscalleneous/Search'
-import PageTitle from './titleComponents/PageTitle'
+import ChangeLocationButton from '../Location/ChangeLocationButton'
+import FilterMenu from '../Menus/FiterMenu/FilterMenu'
+import NavBar from '../Menus/NavBar'
+import SideMenu from '../Menus/SideMenu/SideMenu'
+import SideMenuMobile from '../Menus/SideMenuMobile/SideMenuMobile'
+import Search from '../Miscalleneous/Search'
+import PageTitle from './TitleComponents/PageTitle'
 
 type Props = {
     children?: React.ReactNode,

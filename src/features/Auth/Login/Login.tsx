@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { RootState } from '../../../app/store';
 import { LoginRequest, useLoginMutation } from '../../../services/apiAuth';
-import AuthLayout from '../layouts/AuthLayout';
-import { setCredentials } from './authSlice';
+import AuthLayout from '../Layouts/AuthLayout';
+import { setCredentials } from './AuthSlice';
 
 function Login() {
     const today: Date = new Date();
