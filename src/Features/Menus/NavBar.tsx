@@ -16,7 +16,10 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-
+/**
+ * @description The main horizontal nav bar of the system.
+ * @returns 
+ */
 function NavBar() {
   return (
     <Disclosure as="nav" className={"bg-black w-screen md:w-full"}>

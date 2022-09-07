@@ -3,6 +3,10 @@ import { ChevronRightIcon } from '@heroicons/react/outline'
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
+/**
+ * @description The horizontal nav bar that is displayed on the main nav bar of all the sections of the system apart from the map section.
+ * @returns 
+ */
 function InnerNavBar() {
     return (
         <>

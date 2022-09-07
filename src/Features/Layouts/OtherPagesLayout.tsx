@@ -5,11 +5,22 @@ import { ChangeLocationButton } from '../Location'
 import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
 import { Search } from '../Miscalleneous'
 
-interface Props extends MainLayoutProps {
+/**
+ * @interface
+ * @description Props Interface used in the OtherPagesLayout component for all this layout's props. 
+ * It extends the MainLayoutProps interface to add a searchButton property which takes the name that will be displayed
+ * in the button in the Search component e.g searchButton = Road will set the button to 'New Road'
+ */
+interface OtherPagesLayoutProps extends MainLayoutProps {
     searchButton: string
 }
 
-function OtherPagesLayout(props: Props) {
+/**
+ * @description This is the layout used by the other components that include a table and need the use of the Search component.
+ * @param props 
+ * @returns 
+ */
+function OtherPagesLayout(props: OtherPagesLayoutProps) {
     return (
         <div className='bg-slate-100 h-[100vh] w-screen'>
             <FilterMenu />

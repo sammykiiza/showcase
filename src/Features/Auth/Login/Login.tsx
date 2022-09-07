@@ -7,7 +7,12 @@ import { LoginRequest } from '../../../Types/Models/Auth/loginRequest';
 import AuthLayout from '../Layouts/AuthLayout';
 import { setCredentials } from './AuthSlice';
 
+/**
+ * @description The login component
+ * @returns 
+ */
 function Login() {
+    /**@var @description A Date variable used to get the current date. This is then displayed in the copyright at the bottom */
     const today: Date = new Date();
 
     const [email, setEmail] = useState("");

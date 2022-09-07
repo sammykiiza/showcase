@@ -1,9 +1,14 @@
 import React from 'react'
-import { PageTitle } from '.'
 import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
 import { ChangeLocationButton } from '../Location'
 import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
+import PageTitle from './TitleComponents/PageTitle'
 
+/**
+ * @description The main Layout used by the map component. It does not include the Search component
+ * @param props 
+ * @returns 
+ */
 function MainLayout(props: MainLayoutProps) {
   return (
     <div className='bg-slate-100 h-[100vh] w-screen'>

@@ -5,6 +5,12 @@ import { checkFilterLocalStorage } from '../../../Helpers';
 import { apiFilterMenu } from '../../../Services';
 import { setFiscalYear, setRegion, setCouncil } from './filterMenuSlice';
 
+/**
+ * @description The filter menu component that contains 3 three select menus for the Fiscal years, Regions and Councils.
+ * This is where the user sets their preferred or current location. The select menus are concatenated
+ * so that the user will not have values in the next select menu unless they have selected a value from the previous menu. 
+ * @returns 
+ */
 function FilterMenu() {
     const fiscalYears = apiFilterMenu.useFiscalYearsQuery();
 

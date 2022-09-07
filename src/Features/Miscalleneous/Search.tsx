@@ -1,7 +1,11 @@
 import React from 'react'
 import { ObjectType } from '../../Types/objectType'
 
-
+/**
+ * @description The search form displayed above the system tables. can be resued in other ares as well.
+ * @param props 
+ * @returns 
+ */
 function Search(props: ObjectType) {
     return (
         <div className='bg-white rounded-md'>

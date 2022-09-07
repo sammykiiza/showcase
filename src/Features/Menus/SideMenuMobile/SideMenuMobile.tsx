@@ -32,6 +32,10 @@ const sideVariants = {
   }
 };
 
+/**
+ * @description The mobile version of the side menu
+ * @returns 
+ */
 export default function SideMenuMobile() {
   const [open, cycleOpen] = useCycle(false, true);
 

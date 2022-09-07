@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+/**
+ * @description The side menu which includes links to different sections of the system
+ * @returns 
+ */
 function SideMenu() {
     return (
         <div className="w-60 h-[100vh] md:bg-black md:translate-x-0 -translate-x-full ease-in-out duration-700" id="sidenavExample">
