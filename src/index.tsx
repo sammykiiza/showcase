@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Login } from './Features/Auth';
 import { Contracts } from './Features/ContractManagement';
 import { Locations, Regions, RoadNetwork, Roads, RoadTypes } from './Features/RoadNetwork';
-import {Map} from './Features/Map';
+import { Map } from './Features/Map';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -21,7 +21,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route element={<App />}>
-            
+
             <Route index element={<Login />} />
             <Route path="map" element={<Map />} />
             <Route path="contract-management" element={<Contracts />} />
