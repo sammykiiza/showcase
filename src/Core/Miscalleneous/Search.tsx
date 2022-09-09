@@ -1,5 +1,5 @@
 import React from 'react'
-import { ObjectType } from '../../Types/objectType'
+import { ObjectType } from '../Types/objectType'
 
 /**
  * @description The search form displayed above the system tables. can be resued in other ares as well.

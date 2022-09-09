@@ -1,7 +1,7 @@
 import React from 'react'
-import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
 import { ChangeLocationButton } from '../Location'
 import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
+import { MainLayoutProps } from '../Types/LayoutProps/mainLayoutProps'
 import PageTitle from './TitleComponents/PageTitle'
 
 /**

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { RootState } from '../App/store'
+import { RootState } from '../../App/store'
 import { apiURL, splitString } from '../Helpers'
 import { LoginRequest } from '../Types/Models/Auth/loginRequest'
 import { UserResponse } from '../Types/Models/Auth/userResponse'

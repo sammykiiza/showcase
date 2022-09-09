@@ -1,8 +1,8 @@
 import React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { DateTime } from "luxon";
-import { OtherPagesLayout } from '../../Layouts';
-import { apiAuth } from '../../../Services';
+import { OtherPagesLayout } from '../../../Core/Layouts';
+import { apiAuth } from '../../../Core/Services';
 
 function Roads() {
     const columns: GridColDef[] = [

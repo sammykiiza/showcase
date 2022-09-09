@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../App/hooks';
 import { RootState } from '../../../App/store';
-import { apiAuth } from '../../../Services/apiAuth';
-import { LoginRequest } from '../../../Types/Models/Auth/loginRequest';
-import { AuthLayout } from '../../Layouts';
+import { AuthLayout } from '../../../Core/Layouts';
+import { apiAuth } from '../../../Core/Services';
+import { LoginRequest } from '../../../Core/Types/Models/Auth/loginRequest';
 import { setCredentials } from './AuthSlice';
 
 /**

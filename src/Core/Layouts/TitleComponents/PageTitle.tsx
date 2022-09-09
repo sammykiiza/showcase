@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionProps } from '../../../Types/LayoutProps/sectionProps'
+import { SectionProps } from '../../Types/LayoutProps/sectionProps'
 
 /**
  * @description The component that renders the current system section name will be displayed. e.g. Road Network, Road Inventory.

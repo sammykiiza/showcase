@@ -1,5 +1,5 @@
 import { createListenerMiddleware, PayloadAction } from "@reduxjs/toolkit";
-import { setCouncil, setFiscalYear, setRegion } from "../../Features/Menus/FiterMenu/filterMenuSlice";
+import { setCouncil, setFiscalYear, setRegion } from "../../Core/Menus/FiterMenu/filterMenuSlice";
 
 export const listenerMiddleware = createListenerMiddleware();
 

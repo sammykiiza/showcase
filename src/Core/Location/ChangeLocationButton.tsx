@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { checkFilterLocalStorage, splitString } from '../../Helpers';
+import { checkFilterLocalStorage, splitString } from '../Helpers';
 
 /**
  * @description This is the component that triggers the clearing of the currently selected location so that the user can access the filterMenu to select a new location.

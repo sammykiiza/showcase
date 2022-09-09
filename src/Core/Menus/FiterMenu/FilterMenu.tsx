@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import React, { Fragment, useEffect } from 'react'
 import { useAppDispatch } from '../../../App/hooks';
-import { checkFilterLocalStorage } from '../../../Helpers';
-import { apiFilterMenu } from '../../../Services';
+import { checkFilterLocalStorage } from '../../Helpers';
+import { apiFilterMenu } from '../../Services';
 import { setFiscalYear, setRegion, setCouncil } from './filterMenuSlice';
 
 /**

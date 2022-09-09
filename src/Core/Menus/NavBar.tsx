@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
-import { NavigationProps } from '../../Types/MenuProps/NavBar/navigationProps'
 import { InnerNavBar } from '.'
+import { NavigationProps } from '../Types/MenuProps/NavBar/navigationProps'
 
 
 const navigation: NavigationProps[] = [

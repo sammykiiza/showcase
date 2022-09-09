@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FilterMenuState } from "../../../Types/MenuProps/FilterMenu/filterMenuState";
+import { FilterMenuState } from "../../Types/MenuProps/FilterMenu/filterMenuState";
 
 const initialState: FilterMenuState = {
     fiscalYear: '',

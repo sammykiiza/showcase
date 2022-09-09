@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChildrenProps } from '../../../Types/LayoutProps/childrenProps'
+import { ChildrenProps } from '../../Types/LayoutProps/childrenProps'
 
 /**
  * @description Layout for the Auth pages .i.e. Registration, Login, Password Management pages, etc. 

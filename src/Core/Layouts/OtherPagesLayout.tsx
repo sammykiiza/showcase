@@ -1,9 +1,9 @@
 import React from 'react'
 import { PageTitle } from '.'
-import { MainLayoutProps } from '../../Types/LayoutProps/mainLayoutProps'
 import { ChangeLocationButton } from '../Location'
 import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
 import { Search } from '../Miscalleneous'
+import { MainLayoutProps } from '../Types/LayoutProps/mainLayoutProps'
 
 /**
  * @interface

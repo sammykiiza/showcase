@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainLayout } from '../../Layouts'
+import { MainLayout } from '../../../Core/Layouts'
 
 function Locations() {
   return (
