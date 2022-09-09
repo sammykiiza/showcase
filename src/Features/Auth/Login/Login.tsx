@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../../App/hooks';
 import { RootState } from '../../../App/store';
 import { apiAuth } from '../../../Services/apiAuth';
 import { LoginRequest } from '../../../Types/Models/Auth/loginRequest';
-import AuthLayout from '../Layouts/AuthLayout';
+import { AuthLayout } from '../../Layouts';
 import { setCredentials } from './AuthSlice';
 
 /**
