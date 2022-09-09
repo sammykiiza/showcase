@@ -56,16 +56,16 @@ function FilterMenu() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900"
                                     >
                                         Choose Your Location
                                     </Dialog.Title>
-                                    <div className="mt-4">
+                                    <div className="mt-4 mx-2">
                                         <select
-                                            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3"
+                                            className="form-multiselect px-8 py-2 mt-2 mr-3 focus:border-none focus:ring-black"
                                             name="Fiscal Year"
                                             id="fiscal-year"
                                             onChange={(e) => {
@@ -81,7 +81,7 @@ function FilterMenu() {
                                         </select>
 
                                         <select
-                                            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3"
+                                            className="form-multiselect px-8 py-2 mt-2 mr-3 focus:border-none focus:ring-black"
                                             name="Region"
                                             id="region"
                                             onMouseEnter={async () => { await triggerRegions().unwrap() }}
@@ -97,7 +97,7 @@ function FilterMenu() {
                                         </select>
 
                                         <select
-                                            className="form-multiselect px-8 py-2 mt-2 rounded-full mr-3"
+                                            className="form-multiselect px-8 py-2 mt-2 focus:border-none focus:ring-black"
                                             name="Council"
                                             id="council"
                                             onMouseEnter={async () => { await triggerLocations().unwrap() }}
