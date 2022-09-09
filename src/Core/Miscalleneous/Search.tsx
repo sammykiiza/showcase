@@ -14,7 +14,7 @@ function Search(props: ObjectType) {
                     <div className='flex justify-between'>
                         <div>
                             <label className='p-3'>Search</label>
-                            <input className='rounded h-8 m-2 border-[#C3C4C7] border-1' id='search' type="text" />
+                            <input className='rounded h-8 m-2 border-[#C3C4C7] border-1 focus:ring-0 focus:border-black' id='search' type="text" />
                         </div>
 
                         <div className='m-2 bg-[#2271B1] text-white rounded-md hover:text-slate-300'>

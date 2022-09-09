@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../../App/store'
-import { AuthState } from '../../../Types/Models/Auth/authState'
-import { User } from '../../../Types/Models/Auth/user'
+import { AuthState } from '../../../Core/Types/Models/Auth/authState';
+import { User } from '../../../Core/Types/Models/Auth/user';
 
 /**
  * @description The initial state of the user before authentication.
