@@ -11,6 +11,7 @@ import { Login } from './Features/Auth';
 import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadNetwork, RoadSections, SurfaceDistress } from './Features/RoadNetwork';
 import { Map } from './Features/Map';
 import { Inventory, InventoryData, RoadAndSectionData, RoadInventory } from './Features/RoadInventory';
+import { Planning, PlanningMain } from './Features/Planning';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -40,11 +41,17 @@ root.render(
               </Route>
             </Route>
             
+            {/* road inventory routes */}
             <Route path='road-inventory' element={<RoadInventory />}>
               <Route path='inventory' element={<Inventory />}>
                   <Route path='inventory-data' element={<InventoryData />}/>
                   <Route path='road-and-section-data' element={<RoadAndSectionData />}/>
               </Route>
+            </Route>
+
+            {/* planning routes            */}
+            <Route path='planning' element={<PlanningMain />}>
+              <Route path='planning' element={<Planning />} />
             </Route>
 
           </Route>
