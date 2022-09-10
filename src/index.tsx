@@ -15,6 +15,7 @@ import { Planning, PlanningMain } from './Features/Planning';
 import { Contractors, Contracts, ManageContracts } from './Features/ContractManagement';
 import { Manage, Projects } from './Features/Finance';
 import { Reporting, ReportingMain } from './Features/Reporting';
+import { ManageUsers, Roles, Users } from './Features/UserManagement';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -65,14 +66,24 @@ root.render(
               </Route>
             </Route>
 
+            {/* finance routes */}
             <Route path='finance'>
               <Route path='manage' element={<Manage />}>
                 <Route path='projects' element={<Projects />} />
               </Route>
             </Route>
 
+            {/* reporting routes */}
             <Route path='reporting' element={<ReportingMain />}>
               <Route path='reporting' element={<Reporting />} />
+            </Route>
+
+            {/* user management routes */}
+            <Route path='user-management'>
+              <Route path='manage-users' element={<ManageUsers />}>
+                <Route path='roles' element={<Roles />} />
+                <Route path='users' element={<Users />} />
+              </Route>
             </Route>
 
           </Route>
