@@ -13,6 +13,7 @@ import { Map } from './Features/Map';
 import { Inventory, InventoryData, RoadAndSectionData, RoadInventory } from './Features/RoadInventory';
 import { Planning, PlanningMain } from './Features/Planning';
 import { Contractors, Contracts, ManageContracts } from './Features/ContractManagement';
+import { Manage, Projects } from './Features/Finance';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -60,6 +61,12 @@ root.render(
               <Route path='manage-contracts' element={<ManageContracts />}>
                 <Route path='contracts' element={<Contracts />} />
                 <Route path='contractors' element={<Contractors />} />
+              </Route>
+            </Route>
+
+            <Route path='finance'>
+              <Route path='manage' element={<Manage />}>
+                <Route path='projects' element={<Projects />} />
               </Route>
             </Route>
 
