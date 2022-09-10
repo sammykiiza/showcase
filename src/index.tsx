@@ -8,8 +8,7 @@ import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Login } from './Features/Auth';
-import { Contracts } from './Features/ContractManagement';
-import { Locations, ManageRoads, Regions, RoadNetwork, Roads, RoadTypes } from './Features/RoadNetwork';
+import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadNetwork, RoadSections, SurfaceDistress } from './Features/RoadNetwork';
 import { Map } from './Features/Map';
 
 const container = document.getElementById('root')!;
@@ -24,16 +23,20 @@ root.render(
 
             <Route index element={<Login />} />
             <Route path="map" element={<Map />} />
-            <Route path="contract-management" element={<Contracts />} />
 
             {/* road network routes */}
-            <Route element={<RoadNetwork />} path='road-network'>
+            <Route path='road-network' element={<RoadNetwork />}>
               <Route path='manage-roads' element={<ManageRoads />}>
                 <Route path='regions' element={<Regions />} />
-                <Route path='road-sections' element={<Roads />} />
+                <Route path='road-sections' element={<RoadSections />} />
+                <Route path='locations' element={<Locations />} />
               </Route>
-              <Route path='locations' element={<Locations />} />
-              <Route path='road-types' element={<RoadTypes />} />
+
+              <Route path='condition' element={<Condition />}>
+                <Route path='functional-assessment' element={<FunctionalAssessment />}/>
+                <Route path='surface-distress' element={<SurfaceDistress />} />
+                <Route path='material-information' element={< MaterialInformation/>} />
+              </Route>
             </Route>
 
           </Route>

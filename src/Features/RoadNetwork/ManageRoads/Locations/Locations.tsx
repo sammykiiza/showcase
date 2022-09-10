@@ -1,16 +1,16 @@
 import React from 'react'
 import { MainLayout } from '../../../../Core/Layouts'
 
-function Regions() {
+function Locations() {
   return (
-    <>
+    <div>
       <MainLayout
-        component='Regions'
+        component='Locations'
         section='Road Network'
       >
       </MainLayout>
-    </>
+    </div>
   )
 }
 
-export default Regions
+export default Locations

@@ -6,7 +6,7 @@ import { ObjectType } from '../Types/objectType'
  * @param props 
  * @returns 
  */
-function Search(props: ObjectType) {
+function Search(props?: ObjectType) {
     return (
         <div className='bg-white rounded-md'>
             <div>
@@ -19,7 +19,7 @@ function Search(props: ObjectType) {
 
                         <div className='m-2 bg-[#2271B1] text-white rounded-md hover:text-slate-300'>
                             <button className='px-3 py-1.5 text-sm font-medium h-6'>
-                                New {props.title}
+                                New {props?.title}
                             </button>
                         </div>
                     </div>

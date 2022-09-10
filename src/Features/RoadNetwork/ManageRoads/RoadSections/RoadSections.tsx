@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 import { apiAuth } from '../../../../Core/Services';
 import { OtherPagesLayout } from '../../../../Core/Layouts';
 
-function Roads() {
+function RoadSections() {
     const columns: GridColDef[] = [
         {
             field: 'dateCreated',
@@ -111,4 +111,4 @@ function Roads() {
     )
 }
 
-export default Roads
+export default RoadSections
