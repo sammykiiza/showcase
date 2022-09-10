@@ -1,20 +1,21 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { store } from './App/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Contracts from './features/ContractManagement/Contracts';
-import Map from './features/Map/Map';
-import Login from './features/Auth/Login/Login';
-import Locations from './features/RoadNetwork/Locations/Locations';
-import Regions from './features/RoadNetwork/Regions/Regions';
-import Roads from './features/RoadNetwork/Roads/Roads';
-import RoadTypes from './features/RoadNetwork/RoadTypes/RoadTypes';
-import RoadNetwork from './features/RoadNetwork/RoadNetwork';
+import { Login } from './Features/Auth';
+import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadNetwork, RoadSections, SurfaceDistress } from './Features/RoadNetwork';
+import { Map } from './Features/Map';
+import { Inventory, InventoryData, RoadAndSectionData, RoadInventory } from './Features/RoadInventory';
+import { Planning, PlanningMain } from './Features/Planning';
+import { Contractors, Contracts, ManageContracts } from './Features/ContractManagement';
+import { Manage, Projects } from './Features/Finance';
+import { Reporting, ReportingMain } from './Features/Reporting';
+import { ManageUsers, Roles, Users } from './Features/UserManagement';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -25,17 +26,64 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route element={<App />}>
-            
+
             <Route index element={<Login />} />
             <Route path="map" element={<Map />} />
-            <Route path="contract-management" element={<Contracts />} />
 
             {/* road network routes */}
-            <Route element={<RoadNetwork />} path='road-network'>
-              <Route path='locations' element={<Locations />} />
-              <Route path='regions' element={<Regions />} />
-              <Route path='roads' element={<Roads />} />
-              <Route path='road-types' element={<RoadTypes />} />
+            <Route path='road-network' element={<RoadNetwork />}>
+              <Route path='manage-roads' element={<ManageRoads />}>
+                <Route path='regions' element={<Regions />} />
+                <Route path='road-sections' element={<RoadSections />} />
+                <Route path='locations' element={<Locations />} />
+              </Route>
+
+              <Route path='condition' element={<Condition />}>
+                <Route path='functional-assessment' element={<FunctionalAssessment />} />
+                <Route path='surface-distress' element={<SurfaceDistress />} />
+                <Route path='material-information' element={< MaterialInformation />} />
+              </Route>
+            </Route>
+
+            {/* road inventory routes */}
+            <Route path='road-inventory' element={<RoadInventory />}>
+              <Route path='inventory' element={<Inventory />}>
+                <Route path='inventory-data' element={<InventoryData />} />
+                <Route path='road-and-section-data' element={<RoadAndSectionData />} />
+              </Route>
+            </Route>
+
+            {/* planning routes            */}
+            <Route path='planning' element={<PlanningMain />}>
+              <Route path='planning' element={<Planning />} />
+            </Route>
+
+            {/* contract management routes */}
+            <Route path='contract-management'>
+              <Route path='manage-contracts' element={<ManageContracts />}>
+                <Route path='contracts' element={<Contracts />} />
+                <Route path='contractors' element={<Contractors />} />
+              </Route>
+            </Route>
+
+            {/* finance routes */}
+            <Route path='finance'>
+              <Route path='manage' element={<Manage />}>
+                <Route path='projects' element={<Projects />} />
+              </Route>
+            </Route>
+
+            {/* reporting routes */}
+            <Route path='reporting' element={<ReportingMain />}>
+              <Route path='reporting' element={<Reporting />} />
+            </Route>
+
+            {/* user management routes */}
+            <Route path='user-management'>
+              <Route path='manage-users' element={<ManageUsers />}>
+                <Route path='roles' element={<Roles />} />
+                <Route path='users' element={<Users />} />
+              </Route>
             </Route>
 
           </Route>
