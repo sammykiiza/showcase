@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Login } from './Features/Auth';
 import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadNetwork, RoadSections, SurfaceDistress } from './Features/RoadNetwork';
 import { Map } from './Features/Map';
+import { Inventory, InventoryData, RoadAndSectionData, RoadInventory } from './Features/RoadInventory';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -36,6 +37,13 @@ root.render(
                 <Route path='functional-assessment' element={<FunctionalAssessment />}/>
                 <Route path='surface-distress' element={<SurfaceDistress />} />
                 <Route path='material-information' element={< MaterialInformation/>} />
+              </Route>
+            </Route>
+            
+            <Route path='road-inventory' element={<RoadInventory />}>
+              <Route path='inventory' element={<Inventory />}>
+                  <Route path='inventory-data' element={<InventoryData />}/>
+                  <Route path='road-and-section-data' element={<RoadAndSectionData />}/>
               </Route>
             </Route>
 
