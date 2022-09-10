@@ -3,7 +3,10 @@ import { MainLayout } from '../../../../Core/Layouts'
 
 function InventoryData() {
     return (
-        <MainLayout component='Inventory Data'>
+        <MainLayout
+            component='Inventory Data'
+            section='Road Inventory'
+        >
         </MainLayout>
     )
 }

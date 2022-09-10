@@ -1,15 +1,13 @@
 import React from 'react'
-import { OtherPagesLayout } from '../../../../Core/Layouts'
+import { MainLayout } from '../../../../Core/Layouts'
 
 function MaterialInformation() {
     return (
-        <OtherPagesLayout
-            searchButton='Material'
+        <MainLayout
             component='Material Information'
             section='Road Network'
         >
-            Material Information
-        </OtherPagesLayout>
+        </MainLayout>
     )
 }
 

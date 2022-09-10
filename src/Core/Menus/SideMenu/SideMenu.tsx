@@ -43,7 +43,7 @@ function SideMenu() {
                     </Link>
                 </li>
                 <li className={((window.location.href.indexOf("/contract-management/") > -1)? 'bg-gray-100 border-r-2 border-slate-600': '') + " hover:border-r-2 hover:border-slate-600 relative"} id="sidenavEx4">
-                    <Link to='/contract-management/contracts' className={((window.location.href.indexOf("contract-management") > -1)? "text-gray-900" : "") + " flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-white text-ellipsis whitespace-nowrap hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer"} data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">
+                    <Link to='/contract-management/manage-contracts/contracts' className={((window.location.href.indexOf("contract-management") > -1)? "text-gray-900" : "") + " flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-white text-ellipsis whitespace-nowrap hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer"} data-mdb-ripple="true" data-mdb-ripple-color="dark" aria-expanded="true" aria-controls="collapseSidenavEx8">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" className="w-4 h-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                         <path fill='currentColor' d="M0 64C0 28.65 28.65 0 64 0H224V128C224 145.7 238.3 160 256 160H384V448C384 483.3 355.3 512 320 512H64C28.65 512 0 483.3 0 448V64zM256 128V0L384 128H256z"/>
                         </svg>

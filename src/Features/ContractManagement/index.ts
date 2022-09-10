@@ -1,5 +1,7 @@
-import AddNewContract from "./AddNewContract";
-import Contracts from "./Contracts";
-import IndividualContract from "./IndividualContract";
+import Contractors from "./ManageContracts/Contractors/Contractors"
+import Contracts from "./ManageContracts/Contracts/Contracts"
+import ManageContracts from "./ManageContracts/ManageContracts"
 
-export { AddNewContract, Contracts, IndividualContract }
+
+
+export { Contracts, Contractors, ManageContracts }

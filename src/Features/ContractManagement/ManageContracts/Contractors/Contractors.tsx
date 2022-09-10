@@ -1,14 +1,15 @@
 import React from 'react'
 import { MainLayout } from '../../../../Core/Layouts'
 
-function SurfaceDistress() {
+function Contractors() {
     return (
         <MainLayout
-            component='Surface Distress'
-            section='Road Network'
+            component='Contractors'
+            section='Contract Management'
         >
+
         </MainLayout>
     )
 }
 
-export default SurfaceDistress
+export default Contractors

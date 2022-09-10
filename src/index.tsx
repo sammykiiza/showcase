@@ -12,6 +12,7 @@ import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInform
 import { Map } from './Features/Map';
 import { Inventory, InventoryData, RoadAndSectionData, RoadInventory } from './Features/RoadInventory';
 import { Planning, PlanningMain } from './Features/Planning';
+import { Contractors, Contracts, ManageContracts } from './Features/ContractManagement';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -35,23 +36,31 @@ root.render(
               </Route>
 
               <Route path='condition' element={<Condition />}>
-                <Route path='functional-assessment' element={<FunctionalAssessment />}/>
+                <Route path='functional-assessment' element={<FunctionalAssessment />} />
                 <Route path='surface-distress' element={<SurfaceDistress />} />
-                <Route path='material-information' element={< MaterialInformation/>} />
+                <Route path='material-information' element={< MaterialInformation />} />
               </Route>
             </Route>
-            
+
             {/* road inventory routes */}
             <Route path='road-inventory' element={<RoadInventory />}>
               <Route path='inventory' element={<Inventory />}>
-                  <Route path='inventory-data' element={<InventoryData />}/>
-                  <Route path='road-and-section-data' element={<RoadAndSectionData />}/>
+                <Route path='inventory-data' element={<InventoryData />} />
+                <Route path='road-and-section-data' element={<RoadAndSectionData />} />
               </Route>
             </Route>
 
             {/* planning routes            */}
             <Route path='planning' element={<PlanningMain />}>
               <Route path='planning' element={<Planning />} />
+            </Route>
+
+            {/* contract management routes */}
+            <Route path='contract-management'>
+              <Route path='manage-contracts' element={<ManageContracts />}>
+                <Route path='contracts' element={<Contracts />} />
+                <Route path='contractors' element={<Contractors />} />
+              </Route>
             </Route>
 
           </Route>

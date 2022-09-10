@@ -1,15 +1,13 @@
 import React from 'react'
-import { OtherPagesLayout } from '../../../../Core/Layouts'
+import { MainLayout } from '../../../../Core/Layouts'
 
 function FunctionalAssessment() {
     return (
-        <OtherPagesLayout
-            searchButton='Assessment'
+        <MainLayout
             component='Functional Assessment'
             section='Road Network'
         >
-            Functional Assessment
-        </OtherPagesLayout>
+        </MainLayout>
     )
 }
 

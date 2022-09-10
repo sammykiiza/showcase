@@ -3,7 +3,10 @@ import { MainLayout } from '../../../Core/Layouts'
 
 function Planning() {
   return (
-    <MainLayout component='Planning'>
+    <MainLayout
+      component='Planning'
+      section='Planning'
+    >
     </MainLayout>
   )
 }
