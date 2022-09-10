@@ -9,7 +9,7 @@ import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Login } from './Features/Auth';
 import { Contracts } from './Features/ContractManagement';
-import { Locations, Regions, RoadNetwork, Roads, RoadTypes } from './Features/RoadNetwork';
+import { Locations, ManageRoads, Regions, RoadNetwork, Roads, RoadTypes } from './Features/RoadNetwork';
 import { Map } from './Features/Map';
 
 const container = document.getElementById('root')!;
@@ -28,9 +28,11 @@ root.render(
 
             {/* road network routes */}
             <Route element={<RoadNetwork />} path='road-network'>
+              <Route path='manage-roads' element={<ManageRoads />}>
+                <Route path='regions' element={<Regions />} />
+                <Route path='road-sections' element={<Roads />} />
+              </Route>
               <Route path='locations' element={<Locations />} />
-              <Route path='regions' element={<Regions />} />
-              <Route path='roads' element={<Roads />} />
               <Route path='road-types' element={<RoadTypes />} />
             </Route>
 

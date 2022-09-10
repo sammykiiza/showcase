@@ -1,7 +1,8 @@
 import Locations from "./Locations/Locations";
-import Regions from "./Regions/Regions";
+import ManageRoads from "./ManageRoads/ManageRoads";
+import Regions from "./ManageRoads/Regions/Regions";
+import Roads from "./ManageRoads/Roads/Roads";
 import RoadNetwork from "./RoadNetwork";
-import Roads from "./Roads/Roads";
 import RoadTypes from "./RoadTypes/RoadTypes";
 
-export { Locations, Regions, RoadNetwork, Roads, RoadTypes };
+export { Locations, Regions, RoadNetwork, Roads, RoadTypes, ManageRoads };
