@@ -3,5 +3,5 @@ import PlanningMain from "./PlanningMain"
 
 export {
     Planning,
-    PlanningMain
+    PlanningMain as default
 }

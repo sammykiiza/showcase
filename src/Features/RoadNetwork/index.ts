@@ -11,7 +11,7 @@ import RoadNetwork from "./RoadNetwork";
 export {
     Locations,
     Regions,
-    RoadNetwork,
+    RoadNetwork as default,
     RoadSections,
     ManageRoads,
     FunctionalAssessment,

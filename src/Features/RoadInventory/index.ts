@@ -7,5 +7,5 @@ export {
     InventoryData,
     RoadAndSectionData,
     Inventory,
-    RoadInventory
+    RoadInventory as default
 }
