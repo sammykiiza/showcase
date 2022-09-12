@@ -1,5 +1,5 @@
 import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON as Geo } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
 import './Styles/styles.css';
 import { MainLayout } from '../../Core/Layouts';
 import { apiAuth } from '../../Core/Services';
@@ -15,7 +15,7 @@ function Map() {
     })
   });
 
-  let geoData = data.map(({ geoJson }) => geoJson);
+  let geoData = data.map(({ geoJson }) => geoJson) as any;
 
   return (
     <MainLayout component='Map' section='Map'>
@@ -25,12 +25,12 @@ function Map() {
         scrollWheelZoom={true}
         style={{ height: '77vh', width: '100%', zIndex: 0 }}
       >
-        {/* <Geo
-        data={geoData}
-        /> */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <GeoJSON
+          data={geoData}
         />
         <Marker position={[-15.4245, 28.3197]}>
           <Popup>
