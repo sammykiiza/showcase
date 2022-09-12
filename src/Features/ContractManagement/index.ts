@@ -4,4 +4,4 @@ import ManageContracts from "./ManageContracts/ManageContracts"
 
 
 
-export { Contracts, Contractors, ManageContracts }
+export { Contracts, Contractors, ManageContracts as default }
