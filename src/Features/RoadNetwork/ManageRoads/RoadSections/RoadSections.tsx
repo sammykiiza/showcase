@@ -1,7 +1,7 @@
 import React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { DateTime } from "luxon";
-import { apiAuth } from '../../../../Core/Services';
+import { apiAuth, apiFilterMenu } from '../../../../Core/Services';
 import { OtherPagesLayout } from '../../../../Core/Layouts';
 
 function RoadSections() {
@@ -38,7 +38,7 @@ function RoadSections() {
         },
 
         {
-            field: 'roadTypeId',
+            field: 'roadType',
             headerName: 'Road Type',
             flex: 1,
             minWidth: 100,
@@ -89,6 +89,11 @@ function RoadSections() {
     ];
 
     const { data: rows = [] } = apiAuth.useRoadsQuery();
+    const { data: roadTypes = [] } = apiFilterMenu.useRoadTypesQuery();
+    const data = rows.map(row => {
+        const roadType = roadTypes.find(roadType => roadType.id === row.roadTypeId);
+        return {...row, roadType: roadType?.name}
+      });
 
     return (
         <>
@@ -100,7 +105,7 @@ function RoadSections() {
                                 color: '#000',
                             },
                         }}
-                        rows={rows}
+                        rows={data}
                         columns={columns}
                         pageSize={10}
                         rowsPerPageOptions={[5]}
