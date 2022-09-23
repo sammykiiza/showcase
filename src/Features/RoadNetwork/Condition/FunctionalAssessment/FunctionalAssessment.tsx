@@ -8,7 +8,7 @@ function FunctionalAssessment() {
     const columns: GridColDef[] = [
         {
             field: 'id',
-            headerName: 'id',
+            headerName: 'ID',
             flex: 1,
             minWidth: 150,
             headerClassName: 'bg-[#2271B1] text-white',
@@ -37,13 +37,8 @@ function FunctionalAssessment() {
         },
     ];
     const { data: rows = [] } = apiFilterMenu.useFunctionalAssessmentsQuery();
-    const { data: roadSections = [] } = apiFilterMenu.useRoadSectionsQuery();
+    console.log(rows)
 
-    const data = rows.map(row => {
-        const roadSection = roadSections.find(roadSection => roadSection.id === row.roadSectionId);
-        return {...row, roadSection: roadSection?.roadName}
-      });
-      
     return (
         <OtherPagesLayout
             component='Functional Assessment'
@@ -57,9 +52,9 @@ function FunctionalAssessment() {
                             color: '#000',
                         },
                     }}
-                    rows={data}
+                    rows={rows}
                     columns={columns}
-                    pageSize={10}
+                    pageSize={5}
                     rowsPerPageOptions={[5]}
                 />
             </div>

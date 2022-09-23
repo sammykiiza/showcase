@@ -8,7 +8,7 @@ function SurfaceDistresses() {
     const columns: GridColDef[] = [
         {
             field: 'id',
-            headerName: 'id',
+            headerName: 'ID',
             flex: 1,
             minWidth: 150,
             headerClassName: 'bg-[#2271B1] text-white',
@@ -36,12 +36,13 @@ function SurfaceDistresses() {
         },
     ];
     const { data: rows = [] } = apiFilterMenu.useSurfaceDistressesQuery();
-    const { data: roadSections = [] } = apiFilterMenu.useRoadSectionsQuery();
+    const { data: sections = [] } = apiFilterMenu.useRoadSectionsQuery();
 
     const data = rows.map(row => {
-        const roadSection = roadSections.find(roadSection => roadSection.id === row.roadSectionId);
-        return {...row, roadSection: roadSection?.roadName}
-      });
+
+        const roadSection = sections.find(section => section.id === row.roadSectionId);
+        return { ...row, roadSection: roadSection?.roadName }
+    });
     return (
         <OtherPagesLayout
             component='Material Information'

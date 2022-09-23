@@ -8,7 +8,7 @@ function MaterialInformation() {
     const columns: GridColDef[] = [
         {
             field: 'id',
-            headerName: 'id',
+            headerName: 'ID',
             flex: 1,
             minWidth: 150,
             headerClassName: 'bg-[#2271B1] text-white',
@@ -36,12 +36,6 @@ function MaterialInformation() {
         },
     ];
     const { data: rows = [] } = apiFilterMenu.useMaterialInformationQuery();
-    const { data: roadSections = [] } = apiFilterMenu.useRoadSectionsQuery();
-
-    const data = rows.map(row => {
-        const roadSection = roadSections.find(roadSection => roadSection.id === row.roadSectionId);
-        return {...row, roadSection: roadSection?.roadName}
-      });
 
     return (
         <OtherPagesLayout
@@ -56,7 +50,7 @@ function MaterialInformation() {
                             color: '#000',
                         },
                     }}
-                    rows={data}
+                    rows={rows}
                     columns={columns}
                     pageSize={10}
                     rowsPerPageOptions={[5]}

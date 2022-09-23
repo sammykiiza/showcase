@@ -8,7 +8,7 @@ function Regions() {
   const columns: GridColDef[] = [
     {
       field: 'id',
-      headerName: 'id',
+      headerName: 'ID',
       flex: 1,
       minWidth: 150,
       headerClassName: 'bg-[#2271B1] text-white',
@@ -28,7 +28,7 @@ function Regions() {
     },
     {
       field: 'name',
-      headerName: 'name',
+      headerName: 'Name',
       flex: 1, minWidth: 100,
       headerClassName: 'bg-[#2271B1] text-white',
       headerAlign: 'center',
