@@ -1,4 +1,4 @@
-export interface MaterialInformationInterface {
+export interface RoadAndSectionInterface {
     id: string,
     dateCreated: string,
     roadSectionId: string,

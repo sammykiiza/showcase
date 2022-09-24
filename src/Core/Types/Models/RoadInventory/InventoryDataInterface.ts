@@ -1,5 +1,6 @@
 export interface InventoryDataInterface {
     id: string,
     dateCreated: string,
-    roadSectionId: string
+    roadSectionId: string,
+    roadSection: string
 }

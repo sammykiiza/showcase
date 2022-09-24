@@ -36,13 +36,7 @@ function SurfaceDistresses() {
         },
     ];
     const { data: rows = [] } = apiFilterMenu.useSurfaceDistressesQuery();
-    const { data: sections = [] } = apiFilterMenu.useRoadSectionsQuery();
 
-    const data = rows.map(row => {
-
-        const roadSection = sections.find(section => section.id === row.roadSectionId);
-        return { ...row, roadSection: roadSection?.roadName }
-    });
     return (
         <OtherPagesLayout
             component='Material Information'
@@ -56,7 +50,7 @@ function SurfaceDistresses() {
                             color: '#000',
                         },
                     }}
-                    rows={data}
+                    rows={rows}
                     columns={columns}
                     pageSize={10}
                     rowsPerPageOptions={[5]}

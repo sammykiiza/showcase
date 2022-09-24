@@ -37,7 +37,6 @@ function FunctionalAssessment() {
         },
     ];
     const { data: rows = [] } = apiFilterMenu.useFunctionalAssessmentsQuery();
-    console.log(rows)
 
     return (
         <OtherPagesLayout

@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { apiURL } from '../Helpers';
 import { FunctionalAssessmentsInterface } from '../Types/Models/Roads/Condition/FunctionalAssessmentsInterface';
-import { InventoryDataInterface } from '../Types/Models/Roads/Condition/InventoryDataInterface';
+import { InventoryDataInterface } from '../Types/Models/RoadInventory/InventoryDataInterface';
 import { MaterialInformationInterface } from '../Types/Models/Roads/Condition/MaterialInformationInterface';
 import { RoadSectionsInterface } from '../Types/Models/Roads/ManageRoads/RoadSectionsInterface';
+import { RoadAndSectionInterface } from '../Types/Models/RoadInventory/RoadAndSectionDataInterface';
 
 export const apiFilterMenu = createApi({
     reducerPath: 'apiFilterMenu',
@@ -39,16 +40,28 @@ export const apiFilterMenu = createApi({
                 const functionalAssessmentsData = await fetchWithBQ(`road-condition/functional-assessments?_end=10&_order=ASC&_sort=id&_start=0&fiscalYear=${fiscalYearId}`);
                 const data = functionalAssessmentsData.data as FunctionalAssessmentsInterface[];
 
-                const roadSection = await fetchWithBQ(`road-network/road-sections`);
-                const typedRoadSections = roadSection.data as RoadSectionsInterface[];
+                let sectionsId: string[] = [];
 
-                const filtered = data.map( inventory => {
-                    const roadSection = typedRoadSections?.find(section => inventory.roadSectionId === section.id);
-                    return roadSection !== undefined? {...inventory, roadSection: roadSection.roadName} : { ...inventory, roadSection: '' };
+                data.map( (assessment) => {
+                    sectionsId.push(assessment.roadSectionId);
                 });
 
-                return filtered
-                ?{ data: filtered }
+                let roadSections: RoadSectionsInterface[] = [];
+
+                for (let index = 0; index < sectionsId.length; index++) {
+                    const sections = await fetchWithBQ(`road-network/road-sections?id[]=${sectionsId[index]}`);
+                    const sectionsData = sections.data as RoadSectionsInterface[];
+                    for (let i = 0; i < sectionsData.length; i++) {
+                        roadSections.push(sectionsData[i]);
+                    }
+                }
+
+                for (let index = 0; index < data.length; index++) {
+                    data[index].roadSection = roadSections[index].roadName 
+                }
+                
+                return data
+                ?{ data: data }
                 :{ error: functionalAssessmentsData.error as FetchBaseQueryError }
             },
             
@@ -58,17 +71,27 @@ export const apiFilterMenu = createApi({
                 const fiscalYearId = localStorage.getItem('fiscalYear');
                 const materialInformationData = await fetchWithBQ(`road-condition/material-information?_end=10&_order=ASC&_sort=id&_start=0&fiscalYear=${fiscalYearId}`);
                 const data = materialInformationData.data as MaterialInformationInterface[];
+                let sectionsId: string[] = [];
 
-                const roadSection = await fetchWithBQ(`road-network/road-sections`);
-                const typedRoadSections = roadSection.data as RoadSectionsInterface[];
-
-                const filtered = data.map( inventory => {
-                    const roadSection = typedRoadSections?.find(section => inventory.roadSectionId === section.id);
-                    return roadSection !== undefined? {...inventory, roadSection: roadSection.roadName} : { ...inventory, roadSection: '' };
+                data.map( (material) => {
+                    sectionsId.push(material.roadSectionId);
                 });
 
-                return filtered
-                ?{ data: filtered }
+                let roadSections: RoadSectionsInterface[] = [];
+
+                for (let index = 0; index < sectionsId.length; index++) {
+                    const sections = await fetchWithBQ(`road-network/road-sections?id[]=${sectionsId[index]}`);
+                    const sectionsData = sections.data as RoadSectionsInterface[];
+                    for (let i = 0; i < sectionsData.length; i++) {
+                        roadSections.push(sectionsData[i]);
+                    }
+                }
+                for (let index = 0; index < data.length; index++) {
+                    data[index].roadSection = roadSections[index].roadName 
+                }
+                
+                return data
+                ?{ data: data }
                 :{ error: materialInformationData.error as FetchBaseQueryError }
             },
         }),
@@ -80,9 +103,6 @@ export const apiFilterMenu = createApi({
                 }
             }
         }),
-        roadSections: builder.query<{id: string, roadCode: string, roadName: string, roadSectionNumber: number}[], void>({
-            query: () => `road-network/road-sections`
-        }),
         roadTypes: builder.query<{id: string, dateCreated: string, name: string, handle: string}[], void>({
             query: () => 'road-network/road-types'
         }),
@@ -91,20 +111,57 @@ export const apiFilterMenu = createApi({
                 const fiscalYearId = localStorage.getItem('fiscalYear');
                 const inventoryData = await fetchWithBQ(`road-inventory/inventory-data?_end=10&_order=ASC&_sort=id&_start=0&fiscalYear=${fiscalYearId}`);
                 const data = inventoryData.data as InventoryDataInterface[];
+                let sectionsId: string[] = [];
 
-                const roadSection = await fetchWithBQ(`road-network/road-sections`);
-                const typedRoadSections = roadSection.data as RoadSectionsInterface[];
-
-                const filtered = data.map( inventory => {
-                    const roadSection = typedRoadSections?.find(section => inventory.roadSectionId === section.id);
-                    return roadSection !== undefined? {...inventory, roadSection: roadSection.roadName} : { ...inventory, roadSection: '' };
+                data.map( (inventory) => {
+                    sectionsId.push(inventory.roadSectionId);
                 });
 
-                return filtered
-                ?{ data: filtered }
+                let roadSections: RoadSectionsInterface[] = [];
+
+                for (let index = 0; index < sectionsId.length; index++) {
+                    const sections = await fetchWithBQ(`road-network/road-sections?id[]=${sectionsId[index]}`);
+                    const sectionsData = sections.data as RoadSectionsInterface[];
+                    roadSections.push(sectionsData[0]);
+                }
+
+                for (let index = 0; index < data.length; index++) {
+                    data[index].roadSection = roadSections[index].roadName 
+                }
+
+                return data
+                ?{ data: data }
                 :{ error: inventoryData.error as FetchBaseQueryError }
             },
         }),
+        roadAndSectionData: builder.query<any, void>({
+            async queryFn(_arg, _queryApi, _extraOptions, fetchWithBQ) {
+                const fiscalYearId = localStorage.getItem('fiscalYear');
+                const roadAndSectionData = await fetchWithBQ(`road-inventory/road-section-details?_end=10&_order=ASC&_sort=id&_start=0&fiscalYear=${fiscalYearId}`);
+                const data = roadAndSectionData.data as RoadAndSectionInterface[];
+                let sectionsId: string[] = [];
+
+                data.map( (data) => {
+                    sectionsId.push(data.roadSectionId);
+                });
+
+                let roadSections: RoadSectionsInterface[] = [];
+
+                for (let index = 0; index < sectionsId.length; index++) {
+                    const sections = await fetchWithBQ(`road-network/road-sections?id[]=${sectionsId[index]}`);
+                    const sectionsData = sections.data as RoadSectionsInterface[];
+                    roadSections.push(sectionsData[0]);
+                }
+
+                for (let index = 0; index < data.length; index++) {
+                    data[index].roadSection = roadSections[index].roadName 
+                }
+
+                return data
+                ?{ data: data }
+                :{ error: roadAndSectionData.error as FetchBaseQueryError }
+            },
+        })
     }),
 });
 
