@@ -7,6 +7,7 @@ import { setOpenDialog } from './RoadSectionsSlice';
 import { splitString } from '../../../../Core/Helpers';
 import { apiAuth, apiFilterMenu } from '../../../../Core/Services';
 import { DateTime } from 'luxon';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 export default function RoadSectionView() {
     const dispatch = useAppDispatch();
@@ -147,6 +148,26 @@ export default function RoadSectionView() {
                                                         )) 
                                                         : <div>{oneRoad?.geoJson?.properties}</div>}
                                                     </div>
+                                                    
+                                                    <MapContainer
+                                                        center={[-15.4245, 28.3197]}
+                                                        zoom={13}
+                                                        scrollWheelZoom={true}
+                                                        style={{ height: '30vh', width: '100%', zIndex: 0 }}
+                                                    >
+                                                        <TileLayer
+                                                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                                        />
+                                                        {/* <GeoJSON
+                                                            data={geoData}
+                                                        /> */}
+                                                        <Marker position={[-15.4245, 28.3197]}>
+                                                            <Popup>
+                                                                Zambia.
+                                                            </Popup>
+                                                        </Marker>
+                                                    </MapContainer>
                                                 </div>
                                             </div>
                                             {/* /End replace */}
