@@ -1,8 +1,12 @@
 import React from 'react';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRowParams } from '@mui/x-data-grid';
 import { DateTime } from "luxon";
 import { apiAuth, apiFilterMenu } from '../../../../Core/Services';
 import { OtherPagesLayout } from '../../../../Core/Layouts';
+import RoadSectionView from './RoadSectionView';
+import { useAppDispatch } from '../../../../App/hooks';
+import { setOpenDialog, setRoad } from './RoadSectionsSlice';
+import { Road } from '../../../../Core/Types/Models/Roads/Road';
 
 function RoadSections() {
     const columns: GridColDef[] = [
@@ -95,9 +99,11 @@ function RoadSections() {
         return {...row, roadType: roadType?.name}
       });
 
+    const dispatch = useAppDispatch();
     return (
         <>
             <OtherPagesLayout component='Roads' section='Road Network' searchButton='Road'>
+                <RoadSectionView />
                 <div style={{ height: "74vh", width: '100%' }}>
                     <DataGrid
                         sx={{
@@ -107,6 +113,10 @@ function RoadSections() {
                         }}
                         rows={data}
                         columns={columns}
+                        onRowClick={(params: GridRowParams) => {
+                            dispatch(setOpenDialog());
+                            dispatch(setRoad(params.row as Road));
+                        }}
                         pageSize={5}
                         rowsPerPageOptions={[5]}
                     />

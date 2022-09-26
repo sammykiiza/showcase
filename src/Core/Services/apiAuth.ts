@@ -39,6 +39,15 @@ export const apiAuth = createApi({
       }
     }),
 
+    roadWithId: builder.query<Road[], string>({
+      query: (id: string) => {
+        return {
+          url: `road-network/road-sections/${id}`,
+        }
+
+      }
+    }),
+
     geoJson: builder.query<Road[], void>({
       query: () => {
         const locationId = splitString(council, 0);
