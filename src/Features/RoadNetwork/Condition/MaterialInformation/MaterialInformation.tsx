@@ -52,7 +52,7 @@ function MaterialInformation() {
                     }}
                     rows={rows}
                     columns={columns}
-                    pageSize={10}
+                    pageSize={5}
                     rowsPerPageOptions={[5]}
                 />
             </div>

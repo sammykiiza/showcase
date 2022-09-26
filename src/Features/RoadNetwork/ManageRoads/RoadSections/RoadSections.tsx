@@ -107,7 +107,7 @@ function RoadSections() {
                         }}
                         rows={data}
                         columns={columns}
-                        pageSize={10}
+                        pageSize={5}
                         rowsPerPageOptions={[5]}
                     />
                 </div>
