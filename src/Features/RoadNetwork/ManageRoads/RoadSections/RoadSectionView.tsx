@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline';
 import { useAppDispatch, useAppSelector } from '../../../../App/hooks';
 import { RootState } from '../../../../App/store';
-import { setOpenDialog } from './RoadSectionsSlice';
+import { setOpenDialog, setOpenMap } from './RoadSectionsSlice';
 import { splitString } from '../../../../Core/Helpers';
 import { apiAuth, apiFilterMenu } from '../../../../Core/Services';
 import { DateTime } from 'luxon';
@@ -26,7 +26,7 @@ export default function RoadSectionView() {
 
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={() => dispatch(setOpenDialog())} >
+            <Dialog as="div" className="relative z-10" onClose={() => {dispatch(setOpenDialog())}} >
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -146,28 +146,13 @@ export default function RoadSectionView() {
                                                                 <span>{oneRoad?.geoJson.properties[key]}</span>
                                                             </div>
                                                         )) 
-                                                        : <div>{oneRoad?.geoJson?.properties}</div>}
+                                                        : <div>No properties</div>}
+                                                        <button className='bg-[#2271B1] text-white rounded p-2 text-sm my-2' onClick={() => {
+                                                            dispatch(setOpenMap());
+                                                        }}>
+                                                            Open Road Map
+                                                        </button>
                                                     </div>
-                                                    
-                                                    <MapContainer
-                                                        center={[-15.4245, 28.3197]}
-                                                        zoom={13}
-                                                        scrollWheelZoom={true}
-                                                        style={{ height: '30vh', width: '100%', zIndex: 0 }}
-                                                    >
-                                                        <TileLayer
-                                                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                                        />
-                                                        {/* <GeoJSON
-                                                            data={geoData}
-                                                        /> */}
-                                                        <Marker position={[-15.4245, 28.3197]}>
-                                                            <Popup>
-                                                                Zambia.
-                                                            </Popup>
-                                                        </Marker>
-                                                    </MapContainer>
                                                 </div>
                                             </div>
                                             {/* /End replace */}

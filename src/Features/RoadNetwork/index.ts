@@ -6,8 +6,9 @@ import Locations from "./ManageRoads/Locations/Locations";
 import ManageRoads from "./ManageRoads/ManageRoads";
 import Regions from "./ManageRoads/Regions/Regions";
 import RoadSections from "./ManageRoads/RoadSections/RoadSections";
+import RoadSectionView from "./ManageRoads/RoadSections/RoadSectionView";
+import RoadSectionViewMap from "./ManageRoads/RoadSections/RoadSectionViewMap";
 import RoadNetwork from "./RoadNetwork";
-
 export {
     Locations,
     Regions,
@@ -17,5 +18,7 @@ export {
     FunctionalAssessment,
     MaterialInformation,
     SurfaceDistress,
-    Condition
+    Condition,
+    RoadSectionView,
+    RoadSectionViewMap
 };
