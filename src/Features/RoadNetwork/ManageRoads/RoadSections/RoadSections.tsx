@@ -6,6 +6,7 @@ import { OtherPagesLayout } from '../../../../Core/Layouts';
 import { useAppDispatch } from '../../../../App/hooks';
 import { setOpenDialog, setRoad } from './RoadSectionsSlice';
 import { Road } from '../../../../Core/Types/Models/Roads/Road';
+import { RoadSectionView } from '../..';
 
 function RoadSections() {
     const columns: GridColDef[] = [
@@ -102,6 +103,7 @@ function RoadSections() {
     return (
         <>
             <OtherPagesLayout component='Roads' section='Road Network' searchButton='Road'>
+            <RoadSectionView />
                 <div style={{ height: "74vh", width: '100%' }}>
                     <DataGrid
                         sx={{

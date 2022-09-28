@@ -3,11 +3,11 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline';
 import { useAppDispatch, useAppSelector } from '../../../../App/hooks';
 import { RootState } from '../../../../App/store';
-import { setOpenDialog, setOpenMap } from './RoadSectionsSlice';
+import { setOpenDialog } from './RoadSectionsSlice';
 import { splitString } from '../../../../Core/Helpers';
 import { apiAuth, apiFilterMenu } from '../../../../Core/Services';
 import { DateTime } from 'luxon';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Link } from 'react-router-dom';
 
 export default function RoadSectionView() {
     const dispatch = useAppDispatch();
@@ -143,15 +143,13 @@ export default function RoadSectionView() {
                                                         Object.keys(oneRoad.geoJson.properties).map((key) => (
                                                             <div key={key}>
                                                                 <span>{key}</span>
-                                                                <span>{oneRoad?.geoJson.properties[key]}</span>
+                                                                <span>{oneRoad.geoJson.properties[key]}</span>
                                                             </div>
                                                         )) 
                                                         : <div>No properties</div>}
-                                                        <button className='bg-[#2271B1] text-white rounded p-2 text-sm my-2' onClick={() => {
-                                                            dispatch(setOpenMap());
-                                                        }}>
+                                                        <Link to={road? `/road-network/manage-roads/${road.roadName}` : `/road-network/manage-roads/road-sections/''`} className='bg-[#2271B1] text-white rounded p-2 my-4 text-sm'>
                                                             Open Road Map
-                                                        </button>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>

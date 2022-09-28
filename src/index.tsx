@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import 'tw-elements';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadSections, SurfaceDistress } from './Features/RoadNetwork';
+import { Condition, FunctionalAssessment, Locations, ManageRoads, MaterialInformation, Regions, RoadSections, RoadSectionViewMap, SurfaceDistress } from './Features/RoadNetwork';
 import { Inventory, InventoryData, RoadAndSectionData } from './Features/RoadInventory';
 import { Planning } from './Features/Planning';
 import { Contractors, Contracts } from './Features/ContractManagement';
@@ -50,6 +50,7 @@ root.render(
                 <Route path='manage-roads' element={<ManageRoads />}>
                   <Route path='regions' element={<Regions />} />
                   <Route path='road-sections' element={<RoadSections />} />
+                  <Route path=":road" element={<RoadSectionViewMap />} />
                   <Route path='locations' element={<Locations />} />
                 </Route>
 

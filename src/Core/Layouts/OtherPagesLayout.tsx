@@ -1,6 +1,5 @@
 import React from 'react'
 import { PageTitle } from '.'
-import { RoadSectionView, RoadSectionViewMap } from '../../Features/RoadNetwork'
 import { ChangeLocationButton } from '../Location'
 import { FilterMenu, NavBar, SideMenu, SideMenuMobile } from '../Menus'
 import { Search } from '../Miscalleneous'
@@ -24,8 +23,7 @@ interface OtherPagesLayoutProps extends MainLayoutProps {
 function OtherPagesLayout(props: OtherPagesLayoutProps) {
     return (
         <div className='bg-slate-100 h-[100vh] w-screen'>
-            <RoadSectionView />
-            <RoadSectionViewMap />
+            
             <FilterMenu />
             <div className='flex'>
                 <div style={{ zIndex: 1 }}>
