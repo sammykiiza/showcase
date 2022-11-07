@@ -32,7 +32,7 @@ const  AddRoadSection = () => {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md">
+                <Dialog.Panel className="pointer-events-auto relative w-screen max-w-2xl">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -42,10 +42,10 @@ const  AddRoadSection = () => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div className="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
+                    <div className="absolute top-6 right-0 mr-4 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
                       <button
                         type="button"
-                        className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                        className="rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-0"
                         onClick={() => setOpen(false)}
                       >
                         <span className="sr-only">Close panel</span>
@@ -53,14 +53,96 @@ const  AddRoadSection = () => {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white pb-6 shadow-xl">
+                    <div className="px-4 sm:px-6 bg-[#2271B1] py-10 rounded-tr-xl text-white flex flex-col">
+                      <Dialog.Title className="text-2xl font-bold">New Road</Dialog.Title>
+                      <span className='text-sm'>Get started by filling in the required fields below to create a new road section</span>
+                      <span className='text-red-200 text-sm'>*  required field</span>
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       {/* Replace with your content */}
                       <div className="absolute inset-0 px-4 sm:px-6">
-                        <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" />
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center'>
+                          <div className='text-gray-600 text-sm'>Road Number *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Road Name *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Road Type *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Segment Number *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Start (KM)</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>End (KM)</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Fiscal Year *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Region *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Council *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
+                        {/* road item */}
+                        <div className='flex justify-between items-center mt-4'>
+                          <div className='text-gray-600 text-sm'>Road Condition Index *</div>
+                          <input type="text" className='w-3/4 rounded-lg border-gray-300 focus:ring-0 appearance-none focus:border-[#2271B1] focus-outline-none' />
+                        </div>
+                        <hr className='mt-4 -ml-6 -mr-6' />
+                        {/* road items end */}
+
                       </div>
                       {/* /End replace */}
                     </div>
