@@ -61,10 +61,10 @@ export default function RoadSectionView() {
                                         leaveFrom="opacity-100"
                                         leaveTo="opacity-0"
                                     >
-                                        <div className="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
+                                        <div className="absolute top-6 right-0 mr-2 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
                                             <button
                                                 type="button"
-                                                className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                                className="text-white hover:text-gray-300 focus:outline-none focus:ring-0"
                                                 onClick={() => dispatch(setOpenDialog())}
                                             >
                                                 <span className="sr-only">Close panel</span>
@@ -72,23 +72,24 @@ export default function RoadSectionView() {
                                             </button>
                                         </div>
                                     </Transition.Child>
-                                    <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                                        <div className="px-4 sm:px-6">
-                                            <Dialog.Title className="text-lg font-medium text-gray-900"><span className='font-bold'>{road?.roadName}</span> details</Dialog.Title>
+                                    <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                        <div className="px-4 sm:px-6 bg-[#2271B1] py-10 rounded-tr-xl flex flex-col space-y-4">
+                                            <Dialog.Title className="text-xl font-medium text-white"><span className='font-bold uppercase'>{road?.roadName}</span> details</Dialog.Title>
+                                            <span className='text-white text-xs'>Specific road details including the geojson data</span>
                                         </div>
-                                        <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                        <div className="relative my-2 flex-1 px-4 sm:px-6">
                                             {/* Replace with your content */}
                                             <div className="absolute inset-0 px-4 sm:px-6">
                                                 <div className="h-full" aria-hidden="true">
-                                                    <div>
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>id</span>
-                                                            <span>{road?.id}</span>
+                                                    <div className='mb-2'>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>id</span>
+                                                            <span className="text-slate-600">{road?.id}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Date Uploaded</span>
-                                                            <span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Date Uploaded</span>
+                                                            <span className="text-slate-600">
                                                                 {
                                                                 road? (DateTime.fromISO(road?.dateCreated).toLocaleString(DateTime.DATETIME_MED)) :
                                                                 (DateTime.fromISO('').toLocaleString(DateTime.DATETIME_MED))
@@ -96,57 +97,57 @@ export default function RoadSectionView() {
                                                             </span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Road Number</span>
-                                                            <span>{road?.roadCode}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Road Number</span>
+                                                            <span className="text-slate-600">{road?.roadCode}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Road Name</span>
-                                                            <span>{road?.roadName}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Road Name</span>
+                                                            <span className="text-slate-600">{road?.roadName}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Road Type</span>
-                                                            <span>{roadType?.name}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Road Type</span>
+                                                            <span className="text-slate-600">{roadType?.name}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Section Number</span>
-                                                            <span>{road?.roadSectionNumber}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Section Number</span>
+                                                            <span className="text-slate-600">{road?.roadSectionNumber}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Start(KM)</span>
-                                                            <span>{road?.fromChainage}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Start(KM)</span>
+                                                            <span className="text-slate-600">{road?.fromChainage}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>End(KM)</span>
-                                                            <span>{road?.toChainage}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>End(KM)</span>
+                                                            <span className="text-slate-600">{road?.toChainage}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Council</span>
-                                                            <span>{council}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Council</span>
+                                                            <span className="text-slate-600">{council}</span>
                                                         </div>
 
-                                                        <div className='flex flex-col p-2 text-sm'>
-                                                            <span className='font-bold uppercase'>Road Condition Index</span>
-                                                            <span>{road?.conditionIndex}</span>
+                                                        <div className='flex flex-col p-2 text-sm space-y-2'>
+                                                            <span className='font-bold capitalize'>Road Condition Index</span>
+                                                            <span className="text-slate-600">{road?.conditionIndex}</span>
                                                         </div>
                                                     </div>
 
-                                                    <div>
-                                                        <h3 className='font-bold'>Shape File Properties</h3>
+                                                    <div className='pb-6 pt-3 border-t border-slate-300 w-full'>
+                                                        <h3 className='font-bold text-lg'>Shape File Properties</h3>
                                                         {oneRoad?.geoJson?.properties !== undefined? 
                                                         Object.keys(oneRoad.geoJson.properties).map((key) => (
                                                             <div key={key}>
                                                                 <span>{key}</span>
-                                                                <span>{oneRoad.geoJson.properties[key]}</span>
+                                                                <span className='text-slate-600'>{oneRoad.geoJson.properties[key]}</span>
                                                             </div>
                                                         )) 
-                                                        : <div>No properties</div>}
+                                                        : <div className='py-2 text-sm italic capitalize pl-1 animate-pulse'>No geo properties</div>}
                                                         <Link to={road? `/road-network/manage-roads/${road.roadName}` : `/road-network/manage-roads/road-sections/''`} className='bg-[#2271B1] text-white rounded p-2 my-4 text-sm'>
                                                             Open Road Map
                                                         </Link>
